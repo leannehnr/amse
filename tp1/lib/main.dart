@@ -5,10 +5,10 @@ import 'favorites_page.dart'; // Page des favoris
 
 class MainPage extends StatefulWidget {
   @override
-  _MainPageState createState() => _MainPageState();
+  MainPageState createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class MainPageState extends State<MainPage> {
   int _selectedIndex = 0; // Index de la page active
 
   final List<Widget> _pages = [
@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
             label: "Accueil",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.kitchen), // Icône pour le générateur de recettes
+            icon: Icon(Icons.folder), // Icône pour le générateur de recettes
             label: "Générateur",
           ),
           BottomNavigationBarItem(
