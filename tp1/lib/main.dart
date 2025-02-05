@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/services.dart' show rootBundle;
 
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Namer App',
+        title: 'TP1',
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(245,237,225, 1.0)),
@@ -97,94 +98,7 @@ class Recette {
 
 
 // Page avec le contenu à découvrir
-class MyHomePage extends StatefulWidget {
-  @override
-  State<MyHomePage> createState() => 
-  _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  var selectedIndex = 0; 
-  @override
-  Widget build(BuildContext context) {
-
-    Widget page;
-    switch (selectedIndex) {
-      case 0:
-        page = GeneratorPage();
-        break;
-      case 1:
-        page = ContentPage();
-        break;
-      case 2: 
-        page = FavoritesPage();
-        break;
-      default:
-        throw UnimplementedError('no widget for $selectedIndex');
-    }
-
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Scaffold(
-          body: page, // Affiche la page correspondant à l'index actuel
-          bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          backgroundColor: Colors.black, // Couleur de la barre
-          ItemColor: Colors.beige, // Couleur des icônes sélectionnées
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Accueil",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.folder),
-              label: "Médias",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: "Favoris",
-            ),
-          ],
-          selectedIndex: selectedIndex,
-          onDestinationSelected: (value) {
-            setState(() {
-              selectedIndex = value;
-            });
-          },
-        ),
-      );
-    }
-  }
-}
-
-// Page avec tout le contenu liké
-class FavoritesPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-  return Center(
-    child: Text('No favorites yet.'),
-  );
-}
-
-
-// Page avec tout le contenu trié
-class ContentPage extends StatelessWidget {
-  class FavoritesPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-  return Center(
-    child: Text('No content yet.'),
-  );
-}
-}
-
-
-class GeneratorPage extends StatelessWidget {
+class MyHomePage extends StatelessWidget {
   final List<String> recettes = [
     "Spaghetti Carbonara",
     "Salade César",
@@ -192,16 +106,12 @@ class GeneratorPage extends StatelessWidget {
     "Soupe de légumes",
     "Poulet rôti"
   ];
-
-  GeneratorPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     final random = Random();
     String recetteAleatoire = recettes[random.nextInt(recettes.length)];
-
     return Scaffold(
-      appBar: AppBar(title: Text("Recette du Jour")),
+      appBar: AppBar(title: Text("Nos suggestions")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -219,11 +129,98 @@ class GeneratorPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => GeneratorPage()),
                 );
               },
-              child: Text("Nouvelle suggestion"),
+              child: Text("Accèder à la recette"),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: GeneratorPage(),
+    );
+
+    
+  }
+}
+
+// Page avec tout le contenu liké
+class FavoritesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('No favorites yet.'),
+    );
+  }
+}
+
+// Page avec tout le contenu trié
+class ContentPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('No content yet.'),
+    );
+     
+  }
+}
+
+
+class GeneratorPage extends StatefulWidget {
+
+  GeneratorPage({super.key});
+
+  @override
+  State<GeneratorPage> createState() => _GeneratorPageState();
+}
+
+class _GeneratorPageState extends State<GeneratorPage> {
+  var selectedIndex = 0; 
+
+  @override
+  Widget build(BuildContext context) {
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = MyHomePage(); 
+        break;
+      case 1:
+        page = ContentPage();
+        break;
+      case 2: 
+        page = FavoritesPage();
+        break;
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+    
+
+    return Scaffold(
+      //body:page, 
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedIndex,
+          onTap: (value) {
+            setState(() {
+              selectedIndex = value;
+              
+            });
+          },
+          
+          backgroundColor: Colors.black, // Couleur de la barre
+          selectedItemColor: Color.fromRGBO(216,195,165, 1.0), // Couleur des icônes sélectionnées
+          unselectedItemColor: Color.fromRGBO(245,237,225, 1.0),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.folder),
+              label: "Recettes",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: "Favoris",
+            ),
+          ],
+        ),
     );
   }
 }
