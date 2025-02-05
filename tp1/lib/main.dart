@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart'; // Page d'accueil
-import 'dico_page.dart'; // Page de génération de recettes
+import 'generator_page.dart'; // Page de génération de recettes
 import 'favorites_page.dart'; // Page des favoris
 
 class MainPage extends StatefulWidget {
