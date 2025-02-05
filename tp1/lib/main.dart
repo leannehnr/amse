@@ -193,7 +193,6 @@ class _GeneratorPageState extends State<GeneratorPage> {
     
 
     return Scaffold(
-      //body:page, 
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
           onTap: (value) {
