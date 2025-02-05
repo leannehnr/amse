@@ -5,8 +5,8 @@
             "nom": "Gougères",
             "type":"Entrée", 
             "regime": "Végétarien",
-            "temps de preparation": "15 min", 
-            "temps de cuisson": "35 min",
+            "temps_preparation": "15 min", 
+            "temps_cuisson": "35 min",
             "ingredients": ["75g de comté", "3 oeufs", "125g de farine", "50g de beurre", "sel"], 
             "instructions":["Préchauffez le four à 180°C.",
                 "Déposez dans une casserole le beurre coupé en morceaux. Faites-le fondre à feu doux avec le sel et 25 cl d’eau.", "Lorsque le beurre est bien fondu, ajoutez la farine d’un seul coup. Mélangez vigoureusement à l’aide d’une spatule en bois, jusqu’à obtenir une pâte homogène, qui se décolle des parois de la casserole.", 
@@ -15,15 +15,15 @@
                 "Couvrez une plaque de cuisson de papier sulfurisé. Déposez-y à l’aide de deux petites cuillères, des tas de pâte suffisamment espacés car ils vont gonfler à la cuisson.", 
                 "Enfournez pendant 35 minutes. Lorsque les gougères au Comté sont bien dorées, sortez-les du four."
             ],
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 2, 
             "nom": "Verrine de Noël",
             "type":"Entrée", 
             "regime": "Omnivore",
-            "temps de preparation": "15 min", 
-            "temps de cuisson": "",
+            "temps_preparation": "15 min", 
+            "temps_cuisson": "",
             "ingredients": ["6 tranches de saumon fumé", "2 avocats", "15cl de crème fraiche", "aneth", "jus de citron"], 
             "instructions":["Lavez et séchez l’aneth avec du papier absorbant. Pelez les avocats et coupez leur chair en morceaux.",
                 "Placez le tout dans le bol de votre mixeur.", 
@@ -32,15 +32,15 @@
                 "Dressez les verrines en répartissant la mousse puis, par-dessus, les morceaux de saumon fumé.", 
                 "Réservez au réfrigérateur jusqu’au moment de servir."
             ],
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 3, 
             "nom": "Rouleaux de chou farcis",
             "type":"Entrée", 
             "regime": "Omnivore",
-            "temps de preparation": "30 min", 
-            "temps de cuisson": "15 min",
+            "temps_preparation": "30 min", 
+            "temps_cuisson": "15 min",
             "ingredients": ["huile de sésame", "4 shiitakés déshydratés", "1 chou vert", "200g de porc émincé", "petits oignons", "2 càs de sauce soja", "un peu de mélange 5 épices"], 
             "instructions":["Réhydrater les champignons dans l'eau pendant 8h. Retirer ensuite l'excédent d'eau et la garder pour la suite.",
                 "Séparer vos feuilles de chou. Les laver et les cuire dans de l'eau bouillante pendant environ 4 minutes. Il ne reste plus qu'à égoutter.", 
@@ -50,15 +50,15 @@
                 "Rouler le chou comme un rouleau de printemps. Faire de même avec le reste des feuilles.", 
                 "Cuire dans un panier à vapeur vos nems de chou pendant 10min."
             ],
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 4, 
             "nom": "Croquettes de carotte",
             "type":"Entrée", 
             "regime": "Végétarien",
-            "temps de preparation": "10 min", 
-            "temps de cuisson": "3 min",
+            "temps_preparation": "10 min", 
+            "temps_cuisson": "3 min",
             "ingredients": ["curry", "persil", "3 càs de farine", "1/2 poivron", "10 carottes", "3 oeufs", "1 gousse d'ail"], 
             "instructions":["Pelez les carottes et râpez-les. Coupez le 1/2 poivron en petits dés.",
                 "Dans une sauteuse, faites revenir les carottes, les dés de poivrons et l'ail émincé. Quand le mélange est fondant (environ 10 min de cuisson à feu doux), versez-le dans un saladier.", 
@@ -66,30 +66,30 @@
                 "Avec deux cuillères à soupe, faites des petites boules du mélange et faites-les frire quelques instants de chaque côté dans une une huile bien chaude.", 
                 "Epongez-les et servez avec une salade verte." 
                 ],
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 5, 
             "nom": "Mousse d'asperge",
             "type":"Entrée", 
             "regime": "Végétarien",
-            "temps de preparation": "5 min", 
-            "temps de cuisson": "",
+            "temps_preparation": "5 min", 
+            "temps_cuisson": "",
             "ingredients": ["2 boites de pointes d'asperges", "5 oeufs durs", "1 sachet de gelée maggi", "1 tasse à café de mayonnaise"], 
             "instructions":["Mélanger le sachet de gelée avec le jus des boîtes d'asperges, porter à ébullition ; retirer du feu et laisser refroidir.", 
             "Dans un mixer mettre les pointes d'asperges, les oeufs durs coupés en morceaux, la mayonnaise et la gelée tiède ou refroidie mais pas encore prise.",
             "Versez cette préparation dans un moule à cake ou dans des moules individuels.", 
             "Mettre au réfrigérateur minimum 4 heures. C'est prêt !" 
             ],
-        "image":""
+        "image":"test.jpg"
         }, 
         {
             "id": 6, 
             "nom": "Gnocchis sauce brocoli et jambon",
             "type":"Plat", 
             "regime": "Omnivore",
-            "temps de preparation": "4 min", 
-            "temps de cuisson": "6 min",
+            "temps_preparation": "4 min", 
+            "temps_cuisson": "6 min",
             "ingredients": ["150g de gnocchis", "150g de brocoli", "un peu d'ail", "1 càs de crème fraiche", "un peu de parmesan", "1 tranche de jambon blanc"], 
             "instructions":["Dans une casserole d’eau bouillante salée, faites cuire les gnocchis selon les instructions du paquet. Égouttez-les en fin de cuisson.",
                 "Pendant ce temps, lavez puis coupez le brocoli en sommités. Vous pouvez également couper le tronc en petits cubes et l'ajouter à votre préparation.", 
@@ -98,15 +98,15 @@
                 "Mélangez les gnocchis égouttés avec la sauce aux brocolis.", 
                 "Servez les gnocchis en sauce avec le jambon coupé en morceaux. Ré-assaisonnez selon vos goûts, c'est prêt !"
             ], 
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 7, 
             "nom": "Pates au thon, citron et ricotta",
             "type":"Plat", 
             "regime": "Omnivore",
-            "temps de preparation": "3 min", 
-            "temps de cuisson": "12 min",
+            "temps_preparation": "3 min", 
+            "temps_cuisson": "12 min",
             "ingredients": ["100g de pates", "2 càs de ricotta", "50g de thon au citron", "1/4 de citron", "1 càs de crème"], 
             "instructions":["Dans une casserole d'eau bouillante salée, faites cuire les pâtes selon les instructions du paquet.", 
                 "En fin de cuisson, mettez de côté l'équivalent d'une louche d'eau de cuisson par personne, puis égouttez les pâtes.", 
@@ -115,15 +115,15 @@
                 "Ajoutez les zestes de citron et son jus, puis mélangez.", 
                 "Servez et ajoutez un peu de thon au citron, s'il vous en reste. Ré-assaisonnez selon vos goûts & ajoutez quelques feuilles de basilic si vous en avez. C'est prêt !"
             ], 
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 8, 
             "nom": "Nouilles sautées aux crevettes",
             "type":"Plat", 
             "regime": "Omnivore",
-            "temps de preparation": "5 min", 
-            "temps de cuisson": "6 min",
+            "temps_preparation": "5 min", 
+            "temps_cuisson": "6 min",
             "ingredients": ["70g de nouilles (aux oeufs)", "80g de haricots verts", "100g de carotte", "2 càs de sauce soja", "un peu d'ail", "80g de crevettes", "gingembre"], 
             "instructions":["Dans une casserole d'eau bouillante, faites cuire les nouilles selon les instructions du paquet. Égouttez-les en fin de cuisson.",
                 " Faites chauffer un filet d'huile d'olive dans une poêle, puis ajoutez les haricots verts. Râpez l'ail par-dessus et ajoutez le gingembre (optionnel). Mélangez et laissez cuire 4 à 5 minutes.", 
@@ -132,15 +132,15 @@
                 "Ajoutez les nouilles et mélangez à nouveau. Laissez cuire le tout 2 minutes supplémentaires.",
                 "Servez les nouilles sautées dans une assiette creuse ou un bol. Ajoutez de la coriandre fraîche et des graines de sésame, si vous en avez. C'est prêt !"
             ], 
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 9, 
             "nom": "Brocolis façon carbonara",
             "type":"Plat", 
             "regime": "Omnivore",
-            "temps de preparation": "3 min", 
-            "temps de cuisson": "11 min",
+            "temps_preparation": "3 min", 
+            "temps_cuisson": "11 min",
             "ingredients": ["100g de pates", "100g de brocoli", "75g de lardons", "1 càs de crème fraiche", "un peu de parmesan", "un peu de persil"], 
             "instructions":["Lavez puis détaillez le brocolis en petites fleurettes.",
                 "Dans une casserole d'eau bouillante salée, faites cuire les pâtes selon les instructions du paquet en ajoutant en même temps les brocolis.", 
@@ -148,15 +148,15 @@
                 "Une fois les pâtes et les brocolis cuits, égouttez-les puis ajoutez-les dans la poêle avec la crème et les lardons. Mélangez bien.", 
                 "Dressez les pâtes dans une assiette. Saupoudrez de parmesan s'il vous en reste et de quelques feuilles de persil si vous en avez. C'est prêt !"
             ], 
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 10, 
             "nom": "Soupe de Tortellini",
             "type":"Plat", 
             "regime": "Omnivore",
-            "temps de preparation": "2 min", 
-            "temps de cuisson": "8 min",
+            "temps_preparation": "2 min", 
+            "temps_cuisson": "8 min",
             "ingredients": ["110g de Tortellini", "50g de chair à saucisse", "80g de tomate", "20ml de crème liquide", "1/4 d'oignon", "bouillon cube de volaille", "un peu de parmesan"], 
             "instructions":["Émincez les oignons finement.", 
                 "Si vous avez des saucisses entières et non de la chair à saucisse, videz simplement les saucisses à l'aide de vos doigts.", 
@@ -166,307 +166,19 @@
                 "Salez, poivrez, mélangez et faire cuire à feu doux, à couvert pendant 4 minutes.", 
                 "Une fois la cuisson terminée, ajoutez la crème (optionnel : les épinards frais) et mélangez.", 
                 "Servir avec quelques copeaux de parmesan, c'est prêt !"], 
-            "image":""
+            "image":"test.jpg"
         }, 
         {
             "id": 11, 
             "nom": "Muffins myrtille",
             "type":"Dessert", 
             "regime": "Végétarien",
-            "temps de preparation": "15 min", 
-            "temps de cuisson": "25 min",
+            "temps_preparation": "15 min", 
+            "temps_cuisson": "25 min",
             "ingredients": ["200g de myrtille", "250g de farine", "100g de sucre", "2 oeufs", "15cl de lait", "1 sachet de levure"], 
             "instructions":["Mélangez les poudres ensemble dans un saladier, puis mettez les œufs battus et lait. Puis additionnez les myrtilles.", 
                 "Mettez ensuite dans des moules à muffins. Enfournez 25 minutes à 180°C. C'est prêt !"], 
-            "image":""
-        }, 
-        {
-            "id": 12, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 13, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 14, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 15, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 16, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 17, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 18, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 19, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 20, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 21, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 22, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 23, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 24, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 25, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 26, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 27, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 28, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 29, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 30, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 31, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 32, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 33, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 34, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 35, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 36, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 37, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 38, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 39, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
-        {
-            "id": 40, 
-            "nom": "",
-            "type":"", 
-            "regime": "",
-            "temps de preparation": "", 
-            "temps de cuisson": "",
-            "ingredients": "", 
-            "instructions":""
-        }, 
+            "image":"test.jpg"
+        }
+    ]
+}
