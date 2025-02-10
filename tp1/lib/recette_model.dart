@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-class Recette{
-final int id;
+class Recette {
+  final int id;
   final String nom;
   final String type;
   final String regime;
