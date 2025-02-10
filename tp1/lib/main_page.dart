@@ -13,7 +13,7 @@ class MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
     HomePage(),       // Page Accueil
-    GeneratorPage(),  // Page Générateur
+    GeneratorPage(),  // Page Dico des recettes
     FavoritesPage(),  // Page Favoris
   ];
 

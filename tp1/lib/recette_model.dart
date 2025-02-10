@@ -10,7 +10,7 @@ class Recette {
   final List<String> ingredients;
   final List<String> etapes;
   final String image;
-  final bool favori;
+  bool favori;
 
   Recette({
     required this.id,
