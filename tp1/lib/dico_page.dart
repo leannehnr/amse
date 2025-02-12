@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:tp1/favorites_page.dart';
+import 'favori_services.dart';
 import 'recette_model.dart';
 
 class GeneratorPage extends StatefulWidget {
@@ -10,48 +12,68 @@ class GeneratorPage extends StatefulWidget {
 }
 
 class GeneratorPageState extends State<GeneratorPage> {
+  final FavorisService favorisService = FavorisService();
   List<Recette> recettes = [];
-
+  List<Recette> favoris =[];
+  final box = GetStorage(); // Crée une instance de stockage
   @override
   void initState() {
     super.initState();
-    chargerDepuisFichier();
+    _chargerDepuisFichier();
   }
 
-  Future<void> chargerDepuisFichier() async {
-  try {
-    // Lire le fichier JSON depuis les assets
-    String jsonString = await rootBundle.loadString('assets/recettes.json');
+  Future<void> _chargerDepuisFichier() async {
+    try {
+      // Lire le fichier JSON depuis les assets
+      String jsonString = await rootBundle.loadString('assets/recettes.json');
 
-    // Décoder le JSON en un Map
-    Map<String, dynamic> jsonData = jsonDecode(jsonString);
+      // Décoder le JSON en un Map
+      Map<String, dynamic> jsonData = jsonDecode(jsonString);
 
-    // Accéder à la clé "recettes" et récupérer la liste des recettes
-    List<dynamic> recettesData = jsonData['recettes'];
+      // Vérifier si la clé "recettes" existe
+      if (!jsonData.containsKey('recettes')) {
+        print('Erreur : Clé "recettes" introuvable dans le JSON');
+        return;
+      }
 
-    // Convertir chaque élément en une instance de Recette
-    List<Recette> liste = recettesData.map((item) => Recette.fromJson(item)).toList();
+      // Accéder à la clé "recettes" et récupérer la liste des recettes
+      List<dynamic> recettesData = jsonData['recettes'];
 
-    // Charger les favoris depuis SharedPreferences
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    for (var recette in liste) {
-      bool isFavori = prefs.getBool('favori_${recette.id}') ?? false;
-      recette.favori = isFavori;
+      // Convertir chaque élément en une instance de Recette
+      List<Recette> liste = recettesData.map((item) => Recette.fromJson(item)).toList();
+
+      // Mettre à jour la liste dans l’état pour afficher les données
+      setState(() {
+        recettes = liste;
+      });
+    } catch (e) {
+      print('Erreur lors du chargement des données : $e');
     }
-
-    setState(() {
-      recettes = liste;
-    });
-  } catch (e) {
-    print('Erreur lors du chargement des données : $e');
   }
+
+  void _goToFavorisPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FavorisPage(favoris: favoris),  // Passer favoris à la page
+      ),
+    );
+  }
+
+  void _toggleFavori(Recette recette) async {
+  setState(() {
+    recette.favori = !recette.favori;
+    if(recette.favori){
+      favoris.add(recette);
+    } else {
+      favoris.remove(recette); 
+    }
+    _goToFavorisPage();
+  });
+  // Sauvegarder le favori dans GetStorage
+
 }
 
-  
-  Future<void> sauvegarderFavori(Recette recette) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('favori_${recette.id}', recette.favori);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,14 +100,9 @@ class GeneratorPageState extends State<GeneratorPage> {
                     trailing: IconButton(
                       icon: Icon(
                         recette.favori ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
-                        color: recette.favori ? Colors.red : Colors.grey,
+                        color: recette.favori ? Color(0xFFC97B63) : Colors.grey,
                       ),
-                      onPressed: () {
-                        setState(() {
-                          recette.favori = !recette.favori; // Change l'état favori
-                        });
-                        sauvegarderFavori(recette);
-                      },
+                      onPressed: () => _toggleFavori(recette),
                     ),
                   ),
                 );

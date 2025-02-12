@@ -14,7 +14,7 @@ class MainPageState extends State<MainPage> {
   final List<Widget> _pages = [
     HomePage(),       // Page Accueil
     GeneratorPage(),  // Page Dico des recettes
-    FavoritesPage(),  // Page Favoris
+    FavorisPage(favoris: GeneratorPageState().favoris),  // Page Favoris
   ];
 
   void _onItemTapped(int index) {

@@ -25,6 +25,20 @@ class Recette {
     required this.favori,
   });
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'nom': nom,
+      'type' : type, 
+      'regime' : regime, 
+      'tempsPreparation' : tempsPreparation,
+      'tempsCuisson' : tempsCuisson, 
+      'ingredients' : ingredients, 
+      'etapes' : etapes,
+      'imagePath': image,
+      'favori': favori,
+    };
+  }
   factory Recette.fromJson(Map<String, dynamic> json) {
     return Recette(
       id: json['id'],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'main_page.dart'; // Page d'accueil
 
-void main(){
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init(); // Initialiser get_storage
   runApp(MyApp());
 }
 
