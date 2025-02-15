@@ -73,8 +73,8 @@ class GeneratorPageState extends State<GeneratorPage> {
                   elevation: 3, // Ombre pour un meilleur effet visuel
                   margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                   child: ListTile(
-                    title: Text('${recette.id}', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                    subtitle: Text(recette.nom),
+                    title: Text(recette.nom, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    subtitle: Text("${recette.type} - ${recette.regime}" ),
                     leading: Image.asset(recette.image,
                       width: 50, // Ajuste la taille
                       height: 50,

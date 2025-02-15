@@ -23,6 +23,7 @@ class FavorisPageState extends State<FavorisPage> {
                 return Card(
                   child: ListTile(
                     title: Text(recette.nom),
+                    subtitle: Text("${recette.type} - ${recette.regime}" ),
                     leading: Image.asset(recette.image),
                     trailing: IconButton(
                       icon: Icon(
