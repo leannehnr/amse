@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; 
 import 'package:get_storage/get_storage.dart';
-import 'package:tp1/favorites_page.dart';
 import 'favori_services.dart';
+import 'gestion_fav.dart'; 
 import 'recette_model.dart';
 
 class GeneratorPage extends StatefulWidget {
@@ -14,7 +14,7 @@ class GeneratorPage extends StatefulWidget {
 class GeneratorPageState extends State<GeneratorPage> {
   final FavorisService favorisService = FavorisService();
   List<Recette> recettes = [];
-  List<Recette> favoris =[];
+  //List<Recette> favoris =[];
   final box = GetStorage(); // Crée une instance de stockage
   @override
   void initState() {
@@ -51,28 +51,27 @@ class GeneratorPageState extends State<GeneratorPage> {
     }
   }
 
-  void _goToFavorisPage() {
+  /*void _goToFavorisPage() {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => FavorisPage(favoris: favoris),  // Passer favoris à la page
       ),
     );
-  }
+  }*/
 
   void _toggleFavori(Recette recette) async {
-  setState(() {
-    recette.favori = !recette.favori;
-    if(recette.favori){
-      favoris.add(recette);
-    } else {
-      favoris.remove(recette); 
+    Recette i; 
+    bool action = true; 
+    for (i in Favoris.favoris){
+      if (recette == i){
+        action = false; 
+        break; 
+      }
     }
-    _goToFavorisPage();
-  });
-  // Sauvegarder le favori dans GetStorage
-
-}
+    Favoris.ajoutRecette(recette, action); 
+    recette.favori = !recette.favori;
+  }
 
 
   @override
