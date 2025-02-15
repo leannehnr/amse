@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; 
 import 'package:get_storage/get_storage.dart';
-import 'favori_services.dart';
 import 'gestion_fav.dart'; 
 import 'recette_model.dart';
 
@@ -12,7 +11,6 @@ class GeneratorPage extends StatefulWidget {
 }
 
 class GeneratorPageState extends State<GeneratorPage> {
-  final FavorisService favorisService = FavorisService();
   List<Recette> recettes = [];
   //List<Recette> favoris =[];
   final box = GetStorage(); // Crée une instance de stockage
@@ -61,16 +59,15 @@ class GeneratorPageState extends State<GeneratorPage> {
   }*/
 
   void _toggleFavori(Recette recette) async {
-    Recette i; 
-    bool action = true; 
-    for (i in Favoris.favoris){
-      if (recette == i){
-        action = false; 
-        break; 
-      }
+    bool action; 
+    if(Favoris.favoris.indexOf(recette) != (-1)){
+      action = false; 
+    } else {
+      action = true; 
     }
-    Favoris.ajoutRecette(recette, action); 
-    recette.favori = !recette.favori;
+    setState((){
+      Favoris.ajoutRecette(recette, action); 
+    });
   }
 
 
@@ -98,8 +95,8 @@ class GeneratorPageState extends State<GeneratorPage> {
                     ),
                     trailing: IconButton(
                       icon: Icon(
-                        recette.favori ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
-                        color: recette.favori ? Color(0xFFC97B63) : Colors.grey,
+                        (Favoris.favoris.indexOf(recette) != (-1)) ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
+                        color: (Favoris.favoris.indexOf(recette) != (-1)) ? Color(0xFFC97B63) : Colors.grey,
                       ),
                       onPressed: () => _toggleFavori(recette),
                     ),

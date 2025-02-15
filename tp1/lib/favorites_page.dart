@@ -26,11 +26,13 @@ class FavorisPageState extends State<FavorisPage> {
                     leading: Image.asset(recette.image),
                     trailing: IconButton(
                       icon: Icon(
-                        recette.favori ? Icons.favorite : Icons.favorite_border,
-                        color: recette.favori ? Color(0xFFC97B63): Colors.grey,
+                        (Favoris.favoris.indexOf(recette) != (-1)) ? Icons.favorite : Icons.favorite_border,
+                        color: (Favoris.favoris.indexOf(recette) != (-1)) ? Color(0xFFC97B63): Colors.grey,
                       ),
                       onPressed: () {
-                        Favoris.ajoutRecette(recette, false);  // Retirer des favoris
+                        setState(() {
+                          Favoris.ajoutRecette(recette, false);  // Retirer des favoris
+                        });
                       },
                     ),
                   ),
