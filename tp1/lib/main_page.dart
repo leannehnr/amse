@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart'; // Page d'accueil
-import 'dico_page.dart'; // Page de génération de recettes
+import 'selection_page.dart'; // Page de génération de recettes
 import 'favorites_page.dart'; // Page des favoris
 
 class MainPage extends StatefulWidget {
@@ -13,7 +13,7 @@ class MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
     HomePage(),       // Page Accueil
-    GeneratorPage(),  // Page Dico des recettes
+    SelectionPage(),  // Page Dico des recettes
     FavorisPage(),  // Page Favoris
   ];
 

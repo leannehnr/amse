@@ -4,15 +4,21 @@ import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'gestion_fav.dart'; 
 import 'recette_model.dart';
+import 'recette_page.dart';
 
 class GeneratorPage extends StatefulWidget {
   @override
+  final String typeSelectionne;
+
+  GeneratorPage({required this.typeSelectionne});
+
   GeneratorPageState createState() => GeneratorPageState();
 }
 
 class GeneratorPageState extends State<GeneratorPage> {
   List<Recette> recettes = [];
-  //List<Recette> favoris =[];
+  List<Recette> recettesAffichees = [];
+
   GetStorage box = GetStorage(); // Crée une instance de stockage
   @override
   void initState() {
@@ -43,10 +49,22 @@ class GeneratorPageState extends State<GeneratorPage> {
       // Mettre à jour la liste dans l’état pour afficher les données
       setState(() {
         recettes = liste;
+        _filtrerRecettes();
       });
     } catch (e) {
       print('Erreur lors du chargement des données : $e');
     }
+  }
+
+  void _filtrerRecettes() {
+    setState(() {
+      if (widget.typeSelectionne == "All") {
+        recettesAffichees = List.from(recettes);
+      } else {
+        recettesAffichees = recettes.where((recette) => recette.type == widget.typeSelectionne).toList();
+      }
+    });
+    print(recettesAffichees.length);
   }
 
   void _toggleFavori(Recette recette) async {
@@ -62,13 +80,13 @@ class GeneratorPageState extends State<GeneratorPage> {
   Widget build(BuildContext context) {
     return Scaffold( // Utilisation de Scaffold pour une meilleure structure
       appBar: AppBar(title: Text("Liste des Recettes")), // Optionnel : une barre d'app
-      body: recettes.isEmpty
+      body: recettesAffichees.isEmpty
           ? Center(child: CircularProgressIndicator()) // Loader en attendant le chargement
           : ListView.builder(
               padding: EdgeInsets.all(10), // Ajout d'un padding pour l'esthétique
-              itemCount: recettes.length, // Nombre d'éléments
+              itemCount: recettesAffichees.length, // Nombre d'éléments
               itemBuilder: (context, index) {
-                Recette recette = recettes[index];
+                Recette recette = recettesAffichees[index];
                 return Card(
                   elevation: 3, // Ombre pour un meilleur effet visuel
                   margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -87,6 +105,14 @@ class GeneratorPageState extends State<GeneratorPage> {
                       ),
                       onPressed: () => _toggleFavori(recette),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RecetteDetailPage(recette: recette),
+                        ),
+                      );
+                    },
                   ),
                 );
               },

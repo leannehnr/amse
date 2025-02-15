@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tp1/gestion_fav.dart';
 import 'gestion_fav.dart';
 import 'recette_model.dart';
+import 'recette_page.dart';
 
 class FavorisPage extends StatefulWidget {
   @override
@@ -37,6 +38,14 @@ class FavorisPageState extends State<FavorisPage> {
                         });
                       },
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RecetteDetailPage(recette: recette),
+                        ),
+                      );
+                    },
                   ),
                 );
               },
