@@ -13,7 +13,7 @@ class GeneratorPage extends StatefulWidget {
 class GeneratorPageState extends State<GeneratorPage> {
   List<Recette> recettes = [];
   //List<Recette> favoris =[];
-  final box = GetStorage(); // Crée une instance de stockage
+  GetStorage box = GetStorage(); // Crée une instance de stockage
   @override
   void initState() {
     super.initState();
@@ -49,24 +49,11 @@ class GeneratorPageState extends State<GeneratorPage> {
     }
   }
 
-  /*void _goToFavorisPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => FavorisPage(favoris: favoris),  // Passer favoris à la page
-      ),
-    );
-  }*/
-
   void _toggleFavori(Recette recette) async {
-    bool action; 
-    if(Favoris.favoris.indexOf(recette) != (-1)){
-      action = false; 
-    } else {
-      action = true; 
-    }
+    //bool action; 
+    print(Favoris.favoris.indexOf(recette)); 
     setState((){
-      Favoris.ajoutRecette(recette, action); 
+      Favoris.ajoutRecette(recette); 
     });
   }
 
@@ -81,7 +68,7 @@ class GeneratorPageState extends State<GeneratorPage> {
               padding: EdgeInsets.all(10), // Ajout d'un padding pour l'esthétique
               itemCount: recettes.length, // Nombre d'éléments
               itemBuilder: (context, index) {
-                final recette = recettes[index];
+                Recette recette = recettes[index];
                 return Card(
                   elevation: 3, // Ombre pour un meilleur effet visuel
                   margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -95,8 +82,8 @@ class GeneratorPageState extends State<GeneratorPage> {
                     ),
                     trailing: IconButton(
                       icon: Icon(
-                        (Favoris.favoris.indexOf(recette) != (-1)) ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
-                        color: (Favoris.favoris.indexOf(recette) != (-1)) ? Color(0xFFC97B63) : Colors.grey,
+                        Favoris.favoris.contains(recette) ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
+                        color: Favoris.favoris.contains(recette) ? Color(0xFFC97B63) : Colors.grey,
                       ),
                       onPressed: () => _toggleFavori(recette),
                     ),
