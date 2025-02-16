@@ -119,7 +119,7 @@
             "type": "Entrée",
             "regime": "Omnivore",
             "temps_preparation": "15 min",
-            "temps_cuisson": "0 min",
+            "temps_cuisson": "pas de cuisson",
             "ingredients": [
                 "1 laitue romaine",
                 "1 blanc de poulet",
@@ -323,7 +323,7 @@
             ],
             "etapes": [
                 "Faites fondre le chocolat et le beurre au micro-ondes. Puis mettez les autres aliments et mélangez.",
-                "ÉFaites enfin cuire dans un mug au micro-ondes pendant 1 minute."
+                "Faites enfin cuire dans un mug au micro-ondes pendant 1 minute."
             ],
             "image": "mugcake.jpg",
             "favori": false
@@ -411,7 +411,7 @@
             ],
             "etapes": [
                 "Mélangez les poudres ensemble dans un saladier, puis mettez les œufs battus et lait. Puis additionnez les myrtilles.",
-                "Mélangez les poudres ensemble dans un saladier, puis mettez les œufs battus et lait. Puis additionnez les myrtilles."
+                "Mettez ensuite dans des moules à muffins. Enfournez 25 minutes à 180°C."
             ],
             "image": "muffin-myrtille.jpg",
             "favori": false
@@ -466,7 +466,7 @@
         },
         {
             "id": 22,
-            "nom": "Fajitas Dinde Feta 22",
+            "nom": "Fajitas Dinde Feta",
             "type": "Plat",
             "regime": "Omnivore",
             "temps_preparation": "4 min",
@@ -545,7 +545,7 @@
                 "Passez la purée ainsi obtenue au chinois, pour que le gaspacho soit bien lisse et onctueux ",
                 "Laissez refroidir complètement au frigo, servez très frais avec des croûtons et le restant du concombre et des petits pois réservés."
             ],
-            "image": "Soupe-concombre.jpg",
+            "image": "soupe-concombre.jpg",
             "favori": false
         },
         {
@@ -771,8 +771,7 @@
             "etapes": [
                 "Rincez les champignons et coupez-les en deux. Épluchez la carotte et coupez-la en rondelles. Hachez les oignons nouveaux. Épluchez et hachez finement les oignons et l’ail.",
                 "Faites chauffer l’huile dans une casserole à fond épais. Laissez-y blondir les champignons et les oignons nouveaux pendant 3 à 4 min. Réservez hors du feu.",
-                "Faites chauffer l’huile dans une casserole à fond épais. Laissez-y blondir les champignons et les oignons nouveaux pendant 3 à 4 min. Réservez hors du feu.", 
-                "Versez le vin. Remuez en grattant le fond de la casserole, puis augmentez le feu et laissez une partie du vin s’évaporer. Ajoutez le concentré de tomates, le bouillon de légumes, les champignons, les oignons nouveaux et portez à ébullition.",
+                "Faites revenir dans la casserole la carotte, les oignons et le thym pendant 7 à 8 min sur feu moyen, jusqu’à ce que le tout soit caramélisé. Assaisonnez légèrement. Ajoutez l’ail et poursuivez la cuisson pendant 1 à 2 min. Parsemez de farine, remuez et poursuivez la cuisson encore 1 à 2 min.",
                 "Laissez mijoter sur feu doux pendant 15 à 20 min, jusqu’à ce que la sauce soit bien épaisse. Vérifiez l’assaisonnement et servez aussitôt accompagné d’une purée de pommes de terre ou de céleri-rave."
             ],
             "image": "bourguignon-champignon.jpg",
@@ -794,7 +793,7 @@
                 "3 clous de girofle",
                 "75 cl de bière ambrée ou bière blonde",
                 "2 oignons",
-                "Beurre doux20 g de beurre doux",
+                "20 g de beurre doux",
                 "3 càs de farine",
                 "3 càs de vinaigre de vin rouge",
                 "sel, poivre"
@@ -970,6 +969,88 @@
                 "Laissez les gougères au Comté refroidir 1 ou 2 minutes pour ne pas vous brûler. Dégustez-les chaudes ou tièdes."
             ],
             "image": "gougeres.jpg",
+            "favori": false
+        }, 
+        {
+            "id": 41,
+            "nom": "Croquette de pomme de terre",
+            "type": "Entrée",
+            "regime": "Omnivore",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "10 min",
+            "ingredients": [
+                "350g de pommes de terre",
+                "2 jaunes d'oeufs + 1 oeuf",
+                "40g de beurre", 
+                "150g de gruyère",
+                "2 tranches de jambon cru", 
+                "90g de chapelure", 
+                "1 càs d'huile d'olive", 
+                "huile de friture", 
+                "1 pincée de muscade", 
+                "sel, poivre"
+            ],
+            "etapes": [
+                "Eplucher puis faire cuire les pommes de terre à la vapeur. Une fois cuites, les écraser pour en faire une purée. Couper les tranches de jambon cru de Savoie en tout petits morceaux et râper le gruyère de Savoie.",
+                "Dans un bol, mettre la purée de pommes de terre, le jambon, le beurre coupé en tout petits cubes, le gruyère et les deux jaunes d’oeufs. Mélanger. Assaisonner : sel, poivre, noix de muscade. Mélanger jusqu’à obtenir une consistance homogène et faire des boules de pâte.",
+                "Dans une assiette, mettre la chapelure. Battre dans un bol l’oeuf avec l’huile d’olive. Passer chaque boule dans l’oeuf, puis dans la chapelure.", 
+                "Dans une sauteuse, y faire chauffer l’huile de friture. Faire frire les croquettes sur feu moyen à fort pendant une minute de chaque côté.",
+                "Sortir sur du papier absorbant et servir bien chauds."
+            ],
+            "image": "croquette.jpg",
+            "favori": false
+        },
+        {
+            "id": 42,
+            "nom": "Carpaccio de st jacques",
+            "type": "Entrée",
+            "regime": "Omnivore",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "pas de cuisson",
+            "ingredients": [
+                "1 càc de miel",
+                "12 noix de st jacques fraiches surgelés",
+                "10 càs d'huile d'olive", 
+                "1 bouquet de basilic frais",
+                "1 citron vert", 
+                "sel, poivre"
+            ],
+            "etapes": [
+                "Trancher les st jacques en fines lamelles (si elles sont fraîches, les mettre au congélateur une demi-heure pour les trancher plus facilement).",
+                "Les disposer sur les assiettes.",
+                "Préparer une vinaigrette avec l'huile d'olive, le jus du citron vert, le miel, le basilic ciselé. Saler et poivrer.", 
+                "Mettre la vinaigrette sur les tranches de coquilles et mettre au réfrigérateur une heure avant de servir."
+                
+            ],
+            "image": "carpaccio.jpg",
+            "favori": false
+        }, 
+        {
+            "id" : 43, 
+            "nom": "Terrine de saumon",
+            "type": "Entrée",
+            "regime": "Omnivore",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "55 min",
+            "ingredients": [
+                "500g de filet de saumon",
+                "4 tranches de saumon fumé",
+                "30 cl de crème fraiche épaisse", 
+                "2 oeufs",
+                "1 bouquet de ciboulette",
+                "1 càc de baies roses", 
+                "20g de beurre", 
+                "sel, poivre"
+            ],
+            "etapes": [
+                "Pour commencer, enlevez la peau et les arêtes du filet de saumon (vous pouvez également demander à votre poissonnier de le faire pour vous). Mettez-le dans le panier d’un cuit-vapeur ou au court-bouillon et faites cuire pendant 8 à 10 min.",
+                "Pendant que le filet de saumon cuit, hachez grossièrement le saumon fumé et mettez les morceaux dans un saladier. Une fois que le filet de saumon est cuit, hachez-le grossièrement à son tour, puis mélangez-le au saumon fumé.",
+                "Lavez, séchez et ciselez la ciboulette. Concassez les baies roses. Battez la crème fraîche épaisse avec les œufs entiers, et ajoutez-y la ciboulette et les baies roses. Salez et poivrez. Versez la crème dans le mélange saumon cuit et saumon fumé et mélangez bien le tout.", 
+                "Préchauffez le four th. 6 (180 °C). Beurrez six ramequins ou une terrine et répartissez-y votre préparation de saumons. Posez les ramequins ou votre terrine dans un grand plat allant au four et remplissez-le d’eau tiède à mi-hauteur. Couvrez ensuite ce plat de papier d’aluminium et enfournez votre terrine de saumon pour 45 min de cuisson au bain-marie.",
+                "Une fois votre terrine de saumon cuite, sortez-la du four. Démoulez les ramequins ou la terrine dans les assiettes et laissez refroidir à température ambiante puis mettez au frais pendant au moins 1 heure.",
+                "Sortez votre terrine de saumon du réfrigérateur, et décorez vos assiettes de feuilles de mesclun bien assaisonnées et d'une belle tranche de citron."
+            ],
+            "image": "terrine.jpg",
             "favori": false
         }
     ]

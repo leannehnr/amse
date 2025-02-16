@@ -67,8 +67,6 @@ class GeneratorPageState extends State<GeneratorPage> {
   }
 
   void _toggleFavori(Recette recette) async {
-    //bool action; 
-    print(Favoris.favoris.indexOf(recette)); 
     setState((){
       Favoris.ajoutRecette(recette); 
     });
