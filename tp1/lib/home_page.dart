@@ -1,10 +1,9 @@
 import 'dart:convert';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dico_page.dart';
 import 'recette_model.dart';
 import 'recette_page.dart';
+import 'gestion_fav.dart'; 
 
 class HomePage extends StatefulWidget {  // 🔥 Remplace ici par le vrai nom de ta page d'accueil
   @override
@@ -41,6 +40,13 @@ class HomePageState extends State<HomePage> {
     } catch (e) {
       print('Erreur lors du chargement des recettes : $e');
     }
+  }
+
+  void _toggleFavori(Recette recette) async {
+    print(Favoris.favoris.indexOf(recette)); 
+    setState((){
+      Favoris.ajoutRecette(recette); 
+    });
   }
 
   void _choisirRecettesAleatoires() {
@@ -98,7 +104,25 @@ class HomePageState extends State<HomePage> {
                 fit: BoxFit.cover, // Ajuste bien l'image
               ),
               SizedBox(height: 10),
-              Text(recette.nom, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // 🔥 Espace entre le texte et l'icône
+              children: [
+                Expanded(
+                  child: Text(
+                    recette.nom,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis, // 🔥 Coupe le texte si trop long
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(
+                    Favoris.favoris.contains(recette) ? Icons.favorite : Icons.favorite_border, // Icône rouge si favori
+                    color: Favoris.favoris.contains(recette) ? Color(0xFFC97B63) : Colors.grey,
+                  ),
+                  onPressed: () => _toggleFavori(recette),
+                ),
+              ],
+            ),
               Text("Type : ${recette.type}"),
               Text("Régime : ${recette.regime}"),
               Text("Prépa : ${recette.tempsPreparation}"),

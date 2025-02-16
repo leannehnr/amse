@@ -7,11 +7,10 @@ import 'recette_model.dart';
 import 'recette_page.dart';
 
 class GeneratorPage extends StatefulWidget {
-  @override
   final String typeSelectionne;
 
   GeneratorPage({required this.typeSelectionne});
-
+  @override
   GeneratorPageState createState() => GeneratorPageState();
 }
 
