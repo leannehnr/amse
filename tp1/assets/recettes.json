@@ -21,7 +21,7 @@
                 "Ajouter les pâtes aux lardons, puis hors du feu, incorporer le mélange œufs-parmesan.",
                 "Poivrer et servir."
             ],
-            "image": "test.jpg",
+            "image": "spaghetti.jpg",
             "favori": false
         },
         {
@@ -43,7 +43,7 @@
                 "Faire revenir les légumes.",
                 "Ajouter la viande et mijoter 3 heures."
             ],
-            "image": "test.jpg",
+            "image": "boeuf-bourguignon.jpg",
             "favori": false
         },
         {
@@ -64,7 +64,7 @@
                 "Assaisonner le poulet.",
                 "Faire cuire au four pendant 1 heure à 180°C."
             ],
-            "image": "test.jpg",
+            "image": "poulet.jpg",
             "favori": false
         },
         {
@@ -88,7 +88,7 @@
                 "Cuire 18 min en remuant.",
                 "Ajouter le parmesan et servir."
             ],
-            "image": "test.jpg",
+            "image": "risotto.jpg",
             "favori": false
         },
         {
@@ -110,7 +110,7 @@
                 "Faire revenir avec du curry.",
                 "Ajouter le lait de coco et mijoter 30 min."
             ],
-            "image": "test.jpg",
+            "image": "curry.jpg",
             "favori": false
         },
         {
@@ -133,7 +133,7 @@
                 "Mélanger la laitue avec le poulet, les croûtons et le parmesan.",
                 "Ajouter la sauce et servir."
             ],
-            "image": "test.jpg",
+            "image": "cesar.jpg",
             "favori": false
         },
         {
@@ -157,7 +157,7 @@
                 "Cuire 30 minutes puis mixer.",
                 "Servir chaud."
             ],
-            "image": "test.jpg",
+            "image": "soupe.jpg",
             "favori": false
         },
         {
@@ -181,7 +181,7 @@
                 "Mélanger la crème, le sucre et l'œuf, puis verser sur les pommes.",
                 "Enfourner 30 minutes."
             ],
-            "image": "test.jpg",
+            "image": "tarte.jpg",
             "favori": false
         },
         {
@@ -204,627 +204,772 @@
                 "Ajouter la farine et bien remuer.",
                 "Enfourner 25 minutes à 180°C."
             ],
-            "image": "test.jpg",
+            "image": "chocolat.jpg",
             "favori": false
         },
         {
             "id": 10,
-            "nom": "Recette 10",
-            "type": "Plat",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "Smoothie",
+            "type": "Dessert",
+            "regime": "Végétarien",
+            "temps_preparation": "5 min",
+            "temps_cuisson": "pas de cuisson",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "150g de mélange de fruits rouges surgelés",
+                "300 ml de lait",
+                "2 càc de sucre vanillé"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Mettez tous les ingrédients dans un blender ou dans le bol de votre mixeur, et mixez jusqu’à ce que le mélange devienne mousseux.",
+                "Servez immédiatement."
             ],
-            "image": "test.jpg",
+            "image": "smoothie.jpg",
             "favori": false
         },
         {
             "id": 11,
-            "nom": "Recette 11",
+            "nom": "Salade de fruits",
             "type": "Dessert",
-            "regime": "Omnivore",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "35 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "1/2 barquette de fraises",
+                "3 kiwis",
+                "2 pommes", 
+                "5cl de sirop de pêche"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Coupez les fruits dans un premier temps et déposez dans un saladier. Remuez.",
+                "Versez ensuite le sirop de pêche et mélangez. Gardez au frais avant de servir."
             ],
-            "image": "test.jpg",
+            "image": "salade-fruit.jpg",
             "favori": false
         },
         {
             "id": 12,
-            "nom": "Recette 12",
-            "type": "Plat",
+            "nom": "Crème brulée",
+            "type": "Dessert",
             "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "35 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "25 cl de lait",
+                "4 oeufs",
+                "20 cl de crème fraiche", 
+                "35g de sucre", 
+                "25g de cassonade"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Fouettez d'abord les jaunes d'oeufs et le sucre. Puis mettez le lait et la crème fraîche.",
+                "Versez ensuite dans le ramequin. Puis saupoudrez de cassonade et brûlez au chalumeau."
             ],
-            "image": "test.jpg",
+            "image": "creme.jpg",
             "favori": false
         },
         {
             "id": 13,
-            "nom": "Recette 13",
+            "nom": "Clafoutis aux cerises",
             "type": "Dessert",
-            "regime": "Omnivore",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "35 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "120g de farine",
+                "50g de beurre",
+                "4 oeufs", 
+                "400g de cerises", 
+                "15 cl de lait", 
+                "sel"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Mélangez les poudres ensemble, puis mettez le beurre fondu, les jaunes d'oeufs et le lait. Versez dans les moules à gâteau et déposez les cerises dénoyautées.",
+                "Enfournez 35 minutes à 180°C. Vous pouvez saupoudrer de sucre glace."
             ],
-            "image": "test.jpg",
+            "image": "clafoutis.jpg",
             "favori": false
         },
         {
             "id": 14,
-            "nom": "Recette 14",
-            "type": "Plat",
-            "regime": "Omnivore",
+            "nom": "Boule coco",
+            "type": "Dessert",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "pas de cuisson",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "250g de coco rapée",
+                "50 cl de lait",
+                "1 càc d'extrait de vanille"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Trempez la noix de coco râpée avec le lait et l'extrait de vanille. Laissez dans un récipient et gardez au frais pendant 4 heures.",
+                "Formez ensuite des boules avec une cuillère adaptée."
             ],
-            "image": "test.jpg",
+            "image": "coco.jpg",
             "favori": false
         },
         {
             "id": 15,
-            "nom": "Recette 15",
+            "nom": "Mugcake au chocolat",
             "type": "Dessert",
             "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "2 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "30g de farine",
+                "30g de chocolat",
+                "1 sachet de sucre vanillé", 
+                "40g de beurre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faites fondre le chocolat et le beurre au micro-ondes. Puis mettez les autres aliments et mélangez.",
+                "ÉFaites enfin cuire dans un mug au micro-ondes pendant 1 minute."
             ],
-            "image": "test.jpg",
+            "image": "mugcake.jpg",
             "favori": false
         },
         {
             "id": 16,
-            "nom": "Recette 16",
-            "type": "Plat",
-            "regime": "Omnivore",
+            "nom": "Crumble à la rhubarbe",
+            "type": "Dessert",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
             "temps_cuisson": "30 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "150g de farine",
+                "50g de cassonade",
+                "90g de beurre", 
+                "400g de rhubarbe", 
+                "1 càc d'extrait de vanille"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Coupez les morceaux de rhubarbe et répartissez dans le moule. Mélangez ensuite les autres aliments pour avoir une pâte sablée.",
+                "Couvrez les fruits et faites cuire au four 30 minutes à 210°C. Vous pouvez savourer avec une glace de boule vanille ou de la chantilly."
             ],
-            "image": "test.jpg",
+            "image": "crumble.jpg",
             "favori": false
         },
         {
             "id": 17,
-            "nom": "Recette 17",
+            "nom": "Tiramisu au café",
             "type": "Dessert",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "regime": "Végétarien",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "25 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "15 biscuits à la cuillère",
+                "10cl de café",
+                "3 oeufs", 
+                "250g de mascarpone", 
+                "10g de cassonade", 
+                "cacao en poudre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Trempez les biscuits dans le café et posez dans le moule. Mélangez les jaunes d'oeufs, le sucre et le mascarpone. Montez les blancs en neige et intégrez.",
+                "Versez le tout sur les biscuits. Gardez au frais pendant 4 heures. Saupoudrez de cacao."
             ],
-            "image": "test.jpg",
+            "image": "tiramisu.jpg",
             "favori": false
         },
         {
             "id": 18,
-            "nom": "Recette 18",
-            "type": "Plat",
+            "nom": "Cake aux noix",
+            "type": "Dessert",
             "regime": "Végétarien",
-            "temps_preparation": "20 min",
+            "temps_preparation": "15 min",
             "temps_cuisson": "30 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "200g de farine",
+                "1 sachet de levure",
+                "100g de noix", 
+                "3 oeufs",
+                "100g de sucre",
+                "100g de beurre",
+                "120 ml de lait"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Mélangez les poudres ensemble, puis mettez les produits laitiers et les œufs. Remuez bien et intégrez les noix.",
+                "Versez le tout dans votre moule à cake. Faites cuire au four 30 minutes à 180°C."
             ],
-            "image": "test.jpg",
+            "image": "cake-noix.jpg",
             "favori": false
         },
         {
             "id": 19,
-            "nom": "Recette 19",
+            "nom": "Muffin myrtille",
             "type": "Dessert",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "regime": "Végétarien",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "25 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "200g de myrtille",
+                "250g de farine",
+                "100g de sucre", 
+                "2 oeufs", 
+                "150 ml de lait", 
+                "1 sachet de levure"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Mélangez les poudres ensemble dans un saladier, puis mettez les œufs battus et lait. Puis additionnez les myrtilles.",
+                "Mélangez les poudres ensemble dans un saladier, puis mettez les œufs battus et lait. Puis additionnez les myrtilles."
             ],
-            "image": "test.jpg",
+            "image": "muffin-myrtille.jpg",
             "favori": false
         },
         {
             "id": 20,
-            "nom": "Recette 20",
+            "nom": "Bruschetta champignon, jambon, oeuf",
             "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "7 min",
+            "temps_cuisson": "8 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "4 pains à bruschetta",
+                "600g de champignons",
+                "4 càs de crème d'isigny", 
+                "4 tranches de jambon", 
+                "8 oeufs", 
+                "120g de comté rapé"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faites griller les tranches de pain dans une poêle chaude avec un filet d'huile d'olive.",
+                "Lavez, puis coupez les champignons en fines tranches.",
+                "Faites chauffer un filet d'huile d'olive dans une poêle. Ajoutez les champignons. Salez, poivrez et faites-les revenir 4 à 5 minutes, sur feu moyen.", 
+                "En parallèle, faites chauffer un filet d'huile d'olive dans une autre poêle. Cassez-y les œufs et parsemez-les de comté râpé. Laissez cuire à couvert pendant 2 minutes, sur feu moyen.", 
+                "Étalez la crème sur le pain. Poivrez, puis ajoutez les champignons grillés sur le dessus.", 
+                "Déposez les œufs au comté sur la bruschetta, puis ajoutez le jambon en morceaux. Coupez la bruschetta en deux et dégustez. C'est prêt !"
             ],
-            "image": "test.jpg",
+            "image": "bruschetta.jpg",
             "favori": false
         },
         {
             "id": 21,
-            "nom": "Recette 21",
-            "type": "Dessert",
+            "nom": "Salade au camembert pané, poire & noix",
+            "type": "Plat",
             "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "4 min",
+            "temps_cuisson": "8 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "12 camembert pané",
+                "2 poires",
+                "120g de noix", 
+                "4 poignées de salade", 
+                "2 càs de crème balsamique"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Lavez puis coupez la poire en fines tranches. ",
+                "Dans une poêle chaude, ajoutez les camemberts panés. Faites-les griller 3 à 4 minutes sur chaque face, jusqu'à ce qu'ils soient dorés.",
+                "Dans une assiette ajoutez la salade, la poire, les camemberts panés chauds, la crème balsamique et les noix concassées. Terminez par un filet d'huile d'olive et poivrez. C'est prêt !"
             ],
-            "image": "test.jpg",
+            "image": "salade-camembert.jpg",
             "favori": false
         },
         {
             "id": 22,
-            "nom": "Recette 22",
+            "nom": "Fajitas Dinde Feta 22",
             "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "4 min",
+            "temps_cuisson": "8 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "4 kit fajitas",
+                "4 escalopes de dinde",
+                "80g de feta", 
+                "4 poignées de salade", 
+                "4 càs de crème fraiche"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Coupez la dinde en tranches.",
+                "Faites chauffer un filet d'huile d'olive dans une poêle. Ajoutez les morceaux de dinde et faites-les revenir 5 minutes sur feu moyen.",
+                "Ajoutez la sauce (1/4 de sachet par personne) dans la poêle avec la dinde et mélangez. Poursuivez la cuisson 2 à 3 minutes, puis réservez.", 
+                "Pendant ce temps, dans un bol, mélangez : le mélange d'épices (1/4 de sachet par personne) avec la crème fraîche.", 
+                "Réchauffez les tortillas (2 par personne) dans une poêle chaude à sec pendant 30 secondes sur chaque face.", 
+                "Garnissez-les ensuite avec les morceaux de dinde, le mélange crème fraîche/épices, la laitue et la feta émiettée. C'est prêt !"
             ],
-            "image": "test.jpg",
+            "image": "fajitas.jpg",
             "favori": false
         },
         {
             "id": 23,
-            "nom": "Recette 23",
-            "type": "Dessert",
+            "nom": "Bo bun poulet",
+            "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "16 min",
+            "temps_cuisson": "6 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "240g de vermicelles de riz",
+                "4 escalopes de poulet",
+                "1 concombre", 
+                "2 carottes", 
+                "8 càs de sauce soja sucrée", 
+                "8 càs de vinaigre de cidre", 
+                "80g de cacahuète"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faites cuire ou réhydrater les pâtes, selon les indications du paquet.",
+                "Pendant ce temps, épluchez les carottes, puis râpez-les. ",
+                "Lavez le concombre, puis coupez-le en deux dans le sens de la longueur. Coupez-le ensuite finement en biseaux.", 
+                "Déposez les concombres et les carottes dans des petits bols. Versez 1 cuillère à café de sauce soja sucrée et 1 cuillère à café de vinaigre par portion dans chacun des deux bols. Mélangez, puis laissez mariner.", 
+                "Égouttez les nouilles et passez-les sous un filet d'eau froide pour qu'elles refroidissent. Réservez.", 
+                "Coupez le poulet en lamelles.", 
+                "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez le poulet et faites-le revenir 2 à 3 minutes, en mélangeant, jusqu'à ce qu'il dore légèrement.", 
+                "Versez ensuite le reste de sauce soja sucrée (soit 1 cuillère à soupe par portion) et de vinaigre (1 cuillère à soupe par portion) dans la poêle. Mélangez et laissez cuire 2 à 3 minutes supplémentaires, pour que la sauce caramélise.", 
+                "Dans une assiette creuse ou un bol, servez les vermicelles de riz avec les légumes marinés et le poulet. Versez le reste de la marinade par-dessus. Ajoutez les cacahuètes concassées et quelques feuilles de coriandre, si vous en avez. C'est prêt !"
             ],
-            "image": "test.jpg",
+            "image": "bo-bun.jpg",
             "favori": false
         },
         {
             "id": 24,
-            "nom": "Recette 24",
-            "type": "Plat",
+            "nom": "Soupe petits pois concombre",
+            "type": "Entrée",
             "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "5 min",
+            "temps_cuisson": "25 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "1 concombre",
+                "300g de petits pois",
+                "1 bouillon cube de légumes", 
+                "4 tiges de menthe", 
+                "100g de croutons", 
+                "1 pincée de piment d'espelette", 
+                "sel", 
+                "1 càc d'huile", 
+                "1 échalote hachée"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faites revenir l'échalote hachée dans l'huile, ajoutez les petits pois, le bouillon de légume et couvrez d'eau à hauteur, faites cuire à feu doux pendant 25 minutes jusqu'à ce que les petits pois soient tendres.",
+                "Pelez le concombre, ôtez les graines , gardez en 1/4 et coupez le en tous petits dés, déposez le restant dans le bol du blender.",
+                "Gardez 4 cuillères à soupe des petits pois cuits, versez le restant dans le blender avec le concombre avec le bouillon de cuisson des petits pois.",
+                "Ajoutez les feuilles de menthe , et mixez jusqu'à ce que vous obteniez une purée bien lisse.",
+                "Passez la purée ainsi obtenue au chinois, pour que le gaspacho soit bien lisse et onctueux ",
+                "Laissez refroidir complètement au frigo, servez très frais avec des croûtons et le restant du concombre et des petits pois réservés."
             ],
-            "image": "test.jpg",
+            "image": "Soupe-concombre.jpg",
             "favori": false
         },
         {
             "id": 25,
-            "nom": "Recette 25",
-            "type": "Dessert",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
+            "nom": "Risotto à la crème de butternut",
+            "type": "Plat",
+            "regime": "Végétarien",
+            "temps_preparation": "10 min",
             "temps_cuisson": "30 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "200g de riz à risotto",
+                "1/2 butternut",
+                "125ml de crème fraiche", 
+                "1/2 oignon", 
+                "parmesan", 
+                "huile"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Découper le butternut en morceaux et faire cuire dans l'eau. Une fois suffisament moelleux, mixer avec un peu d'eau. Réserver",
+                "Faire revenir les oignons émincés dans un peu d'huile pendant 5 minutes puis ajouter le riz. Mélanger pendant 5 min",
+                "Ajouter une louche de soupe et une louche d'eau (si la soupe n'est pas assez liquide) pour arroser le riz toutes les 7/8 min et recouvrir", 
+                "Au bout de 20 minutes, ajouter le parmesan, mélanger et servir."
             ],
-            "image": "test.jpg",
+            "image": "risotto-butternut.jpg",
             "favori": false
         },
         {
             "id": 26,
-            "nom": "Recette 26",
+            "nom": "Burger Raclette",
             "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "10 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "4 pains à burger",
+                "8 tranches de raclette",
+                "4 càc de sauce béarnaise", 
+                "4 feuilles de salade", 
+                "4 tranches de jabon fumé", 
+                "4 steaks hachés", 
+                "1 oignon", 
+                "sel, poivre", 
+                "huile"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Préchauffer le four à 180°C (th 6). Couper les pains burger en deux. Mettre une tranche à raclette sur la moitié de chaque pain et enfourner le tout quelques minutes.",
+                "Pendant ce temps, émincer les oignons et les faire revenir dans une poêle avec un filet d'huile d'olive et une pincée de sel. Réserver. Faire griller le jambon fumé à la poêle et réserver.",
+                "Cuire les steaks hachés dans une poêle bien chaude. Saler poivrer. Les retourner, placer une tranche de raclette sur le dessus et couvrir à l'aide d'un couvercle (le fromage fondra plus vite).",
+                "Sortir les pains du four et tartiner la moitié de chaque buns de sauce béarnaise. Placer la feuille de salade, le steak haché, le jambon fumé, les oignons grillés et fermer les burgers. Servir aussitôt !"
             ],
-            "image": "test.jpg",
+            "image": "burger.jpg",
             "favori": false
         },
         {
             "id": 27,
-            "nom": "Recette 27",
-            "type": "Dessert",
-            "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "Poulet curry coco",
+            "type": "Plat",
+            "regime": "Omnivore",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "1h",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "2 oignons jaunes",
+                "curry en poudre",
+                "1 càc de gingembre en poudre ou rapé", 
+                "4 escalopes de poulet", 
+                "1 boîte de lait de coco", 
+                "1 petite boîte de champignons de paris"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faire dorer les oignons dans de l'huile d'olive à feu moyen, jusqu'à ce qu'ils soit transparents.",
+                "Ajouter la moitié du curry, puis faites dorer les escalopes en remuant de temps en temps. Saler et poivrer.",
+                "Baisser le feu, et ajouter le gimgembre, puis couvrir de lait de coco, ajouter le reste du curry, et les copeaux de coco, et les champignons si souhaité.", 
+                "Laisser mijoter environ 30 mn. Servir chaud accompagné de riz thaï."
             ],
-            "image": "test.jpg",
+            "image": "poulet-curry.jpg",
             "favori": false
         },
         {
             "id": 28,
-            "nom": "Recette 28",
+            "nom": "Pancakes de courgette",
             "type": "Plat",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "regime": "Végétarien",
+            "temps_preparation": "5 min",
+            "temps_cuisson": "3 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "200g de courgette",
+                "2 oeufs",
+                "3 càs de farine de sarrasin", 
+                "1 càc de curcuma", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Battez les œufs en omelette puis ajoutez le poivre, le sel, la farine ainsi que le curcuma. Fouettez le tout.",
+                "Lavez la courgette, retirez les extrémités et râpez ou mixez le reste. Placez le tout dans une passoire et pressez avec une cuillère pour éliminer un maximum d'eau. Mélangez cette purée avec la préparation précédente.",
+                "Huilez une poêle et chauffez-la à feu vif. Versez-y une louche de pâte et laissez cuire 1 à 2 min de chaque côté en surveillant. Répétez pour les autres pancakes."
             ],
-            "image": "test.jpg",
+            "image": "pancake-courgette.jpg",
             "favori": false
         },
         {
             "id": 29,
-            "nom": "Recette 29",
-            "type": "Dessert",
+            "nom": "Croque Monsieur",
+            "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "5 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "8 tranches de pain de mie",
+                "8 tranches de fromage (au choix)",
+                "4 tranches de jambon", 
+                "50g de beurre tendre", 
+                "4 càs de lait", 
+                "100g de gruyère rapé", 
+                "1 pincée de muscade", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Beurrez les 8 tranches de pain de mie sur une seule face. Posez 1 tranche de fromage sur chaque tranche de pain de mie. Posez 1 tranche de jambon plié en deux sur 4 tranches de pain de mie. Recouvrez avec les autres tartines (face non beurrée au dessus).",
+                "Dans un bol mélanger le fromage râpé avec le lait, le sel, le poivre et la muscade.",
+                "Répartissez le mélange sur les croque-monsieur.", 
+                "Placez sur une plaque au four sous le grill pendant 10 mn."
             ],
-            "image": "test.jpg",
+            "image": "croque.jpg",
             "favori": false
         },
         {
             "id": 30,
-            "nom": "Recette 30",
+            "nom": "Tagliatelles au saumon fumé",
             "type": "Plat",
-            "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "regime": "Omnivore",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "15 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "400g de tagliatelles",
+                "100g de saumon",
+                "1 càs d'huile d'olive",
+                "1 gousse d'ail écrasée", 
+                "250 ml de crème fraiche épaisse", 
+                "1/4 de tasse de ciboulette", 
+                "1 citron pressé", 
+                "2 càs de parmesan", 
+                "1 càc de moutarde de dijon"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Faire cuire les tagliatelles.",
+                "Dans une poêle, faire revenir l'ail dans l'huile d'olive pendant 30 secondes à feu doux.",
+                "Verser la crème, la ciboulette, la moutarde, le sel et le poivre. Amener à ébulltion, baisser le feu et laisser mijoter jusqu'à épaississement.",
+                "Ajouter le saumon fumé (découpé en petits morçeaux), le jus de citron et mélanger. Faire chauffer à feu doux.",
+                "Saupoudrer de parmesan et de ciboulette et servir avec les tagliatelles."
             ],
-            "image": "test.jpg",
+            "image": "pates-saumon.jpg",
             "favori": false
         },
         {
             "id": 31,
-            "nom": "Recette 31",
-            "type": "Dessert",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "Tagliatelles de courgette",
+            "type": "Plat",
+            "regime": "Végétarien",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "15 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "2kg de courgettes",
+                "2 gousses d'ail",
+                "3 feuilles de basilic", 
+                "2 càc d'huile d'olive", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Peler les légumes. Avec le couteau économe, tailler des tagliatelles dans la chair des courgettes prises dans le sens de la longueur. Faire chauffer l'huile d'olive dans une sauteuse. Y jeter les tagliatelles, et laisser bien griller sur feu vif, jusqu'à se qu'elles soient caramélisées.",
+                "En fin de cuisson, ajouter l'ail écrasé et le basilic ciselé. Saler, poivrer et déguster."
             ],
-            "image": "test.jpg",
+            "image": "tagliatelle-courgette.jpg",
             "favori": false
         },
         {
             "id": 32,
-            "nom": "Recette 32",
+            "nom": "Risotto de quinoa au butternut",
             "type": "Plat",
-            "regime": "Omnivore",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "40 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "1/2 butternut",
+                "5 petits oignons",
+                "15 feuilles de sauge fraiche", 
+                "350g de quinoa", 
+                "1l de bouillon (herbes ou légumes)", 
+                "15 cl de crème liquide entière", 
+                "pecorino", 
+                "huile d'olive", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Épluchez la butternut et coupez la chair en petits morceaux. Pelez les oignons et coupez-les en deux sur la longueur. Faites chauffer une poêle avec 1 filet d’huile d’olive. Placez-y la butternut et les oignons, mélangez, salez. Ajoutez la moitié de la sauge hachée et mélangez de nouveau. Laissez cuire sur feu doux 10 mn. Quand la butternut est tendre, augmentez le feu 3-4 mn afin de colorer le tout. Réservez.",
+                "Placez dans cette même poêle le quinoa sur feu doux. Versez 1 filet d’huile d’olive et mélangez. Une fois qu’il commence à crépiter, versez une partie du bouillon chaud petit à petit. Mélangez et attendez que le bouillon soit absorbé avant d’en verser de nouveau. Une fois le quinoa cuit et le bouillon absorbé, baissez le feu et incorporez la crème liquide.",
+                "Ajoutez la butternut et les oignons. Mélangez. Râpez du pecorino, parsemez selon vos goûts, et mélangez.", 
+                "Ajoutez avant de servir le restant de sauge émincée."
             ],
-            "image": "test.jpg",
+            "image": "quinoa-butternut.jpg",
             "favori": false
         },
         {
             "id": 33,
-            "nom": "Recette 33",
-            "type": "Dessert",
+            "nom": "Bourguignon de champignons",
+            "type": "Plat",
             "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "40 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "1kg de champignons de paris",
+                "1 carotte moyenne",
+                "120g de petits oignons", 
+                "2 oignons", 
+                "2 gousses d'ail", 
+                "2 càs d'huile d'olive", 
+                "1 càc de thym", 
+                "2 càs de farine", 
+                "25cl de vin rouge", 
+                "2 càs de concentré de tomates", 
+                "50 cl de bouillon de légumes", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Rincez les champignons et coupez-les en deux. Épluchez la carotte et coupez-la en rondelles. Hachez les oignons nouveaux. Épluchez et hachez finement les oignons et l’ail.",
+                "Faites chauffer l’huile dans une casserole à fond épais. Laissez-y blondir les champignons et les oignons nouveaux pendant 3 à 4 min. Réservez hors du feu.",
+                "Faites chauffer l’huile dans une casserole à fond épais. Laissez-y blondir les champignons et les oignons nouveaux pendant 3 à 4 min. Réservez hors du feu.", 
+                "Versez le vin. Remuez en grattant le fond de la casserole, puis augmentez le feu et laissez une partie du vin s’évaporer. Ajoutez le concentré de tomates, le bouillon de légumes, les champignons, les oignons nouveaux et portez à ébullition.",
+                "Laissez mijoter sur feu doux pendant 15 à 20 min, jusqu’à ce que la sauce soit bien épaisse. Vérifiez l’assaisonnement et servez aussitôt accompagné d’une purée de pommes de terre ou de céleri-rave."
             ],
-            "image": "test.jpg",
+            "image": "bourguignon-champignon.jpg",
             "favori": false
         },
         {
             "id": 34,
-            "nom": "Recette 34",
+            "nom": "Carbonade flammande",
             "type": "Plat",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "40 min",
+            "temps_cuisson": "3h",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "Boeuf à braiser1,5 kg de boeuf à braiser (paleron)",
+                "3 càs de sucre de canne roux ou cassonade ou vergeoise brune",
+                "8 tranches de pain d'épices",
+                "3 branches de thym",
+                "2 feuilles de laurier",
+                "3 clous de girofle",
+                "75 cl de bière ambrée ou bière blonde",
+                "2 oignons",
+                "Beurre doux20 g de beurre doux",
+                "3 càs de farine",
+                "3 càs de vinaigre de vin rouge",
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Découpez la viande en gros cubes de 50 g.",
+                "Épluchez puis ciselez les oignons.",
+                "Coupez le pain d’épices en morceaux, les clous de girofle et la moitié du pain d'épices.",
+                "Dans une cocotte, faites dorer la viande dans le beurre fondu.",
+                "Salez, ajoutez les oignons, faites-les cuire 2 min.",
+                "Ajoutez le vinaigre.",
+                "Laissez cuire 2 min.",
+                "Ajoutez la farine.",
+                "Laissez cuire 3 min tout en remuant.",
+                "Ajoutez la bière, le sucre, le thym, le laurier, les clous de girofle et la moitié du pain d'épices.",
+                "Portez à ébullition.",
+                "Couvrez et baissez le feu.",
+                "Laisser mijoter 2h45.",
+                "Retirez le couvercle, augmentez le feu et faites cuire à découvert en remuant, jusqu'à ce que la sauce ait réduit de moitié.",
+                "Faites griller les morceaux de pain d'épices restants.",
+                "Servez-les en accompagnement."
             ],
-            "image": "test.jpg",
+            "image": "carbonade.jpg",
             "favori": false
         },
         {
             "id": 35,
-            "nom": "Recette 35",
-            "type": "Dessert",
+            "nom": "Verrine crevette mangue",
+            "type": "Entrée",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "pas de cuisson",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "coriandre",
+                "250g de crevettes",
+                "1 mangue", 
+                "citron vert", 
+                "huile d'olive"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Tremper les crevettes décortiquées coupées en deux dans l'huile d'olive, le jus du citron vert et la coriandre coupée très finement. Couvrir hermétiquement cette marinade et la laisser au minimum une nuit au réfrigérateur.",
+                "Le lendemain, couper la mangue en fins bâtonnets de 1 cm de longueur. Pour plus d'esthétique, il est conseillé de réaliser cette opération avec une mandoline ou une grosse râpe.",
+                "Disposer les bâtonnets de mangue dans les verrines et verser un peu de marinade par-dessus.", 
+                "Enfin, ajouter les crevettes et servir très frais."
             ],
-            "image": "test.jpg",
+            "image": "crevette-mangue.jpg",
             "favori": false
         },
         {
             "id": 36,
-            "nom": "Recette 36",
-            "type": "Plat",
-            "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "Muffins aux poireaux et lardons",
+            "type": "Entrée",
+            "regime": "Omnivore",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "25 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "2 poireaux",
+                "200g de lardons",
+                "150g de farine", 
+                "1 sachet de levure", 
+                "3 oeufs", 
+                "100 ml de lait", 
+                "100 ml d'huile", 
+                "sel, poivre", 
+                "1 pincée de muscade"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Préchauffez votre four à 180°C.",
+                "Lavez les poireaux et retirez un peu de vert. Coupez-les en rondelles très fines.",
+                "Faites revenir les lardons sans matière grasse dans une poêle bien chaude et ajoutez les poireaux au bout de 5 min. Laissez cuire encore 5 min puis débarrassez.",
+                "Mélangez la farine et la levure dans un saladier. Ajoutez les œufs, le lait et l’huile puis fouettez jusqu’à l’obtention d’une pâte homogène. Incorporez les lardons et les poireaux, du sel, du poivre et la muscade.",
+                "Remplissez des moules à muffins aux 3/4 avec cette pâte et enfournez pour 25 min à 180°C."
             ],
-            "image": "test.jpg",
+            "image": "muffins-poireaux.jpg",
             "favori": false
         },
         {
             "id": 37,
-            "nom": "Recette 37",
-            "type": "Dessert",
+            "nom": "Mini wraps au chorizo",
+            "type": "Entrée",
             "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "10 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "3 oignons",
+                "1/2 poivron vert",
+                "1/2 poivron rouge", 
+                "80g de tomates séchées", 
+                "150g de chorizo", 
+                "150g de st moret", 
+                "2 càs d'herbes de provence", 
+                "2 tortillas de maïs", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Pelez les oignons, puis émincez-les finement. Epépinez les poivrons et émincez-les finement également. Faites de même avec les tomates séchées et le chorizo.",
+                "Mélangez tous ces ingrédients avec le fromage dans un saladier. Salez et poivrez, puis ajoutez les herbes de Provence et mélangez bien.",
+                "Etalez cette préparation sur les galettes et roulez-les sur elles-mêmes. Coupez-les en tronçons en les maintenant avec de petites piques si besoin."
             ],
-            "image": "test.jpg",
+            "image": "wrap-chorizo.jpg",
             "favori": false
         },
         {
             "id": 38,
-            "nom": "Recette 38",
-            "type": "Plat",
-            "regime": "Omnivore",
+            "nom": "Potimarron farci au chèvre",
+            "type": "Entrée",
+            "regime": "Végétarien",
             "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "temps_cuisson": "1h",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "1 potimarron",
+                "1 bûche de chèvre",
+                "250 ml de crème fraiche", 
+                "3 oeufs", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Portez à ébullition une grande quantité d'eau. Pendant ce temps, ouvrez un chapeau au sommet du potimarron et videz-le. Blanchissez le potimarron pendant environ 15 min, puis égouttez-le.",
+                "Préchauffez le four à th.7 (200C).",
+                "Battez ensemble la crème et les oeufs, salez légèrement et poivrez. Coupez le fromage de chèvre en tout petits morceaux, incorporez-les à la préparation pour ensuite mélanger le tout.",
+                "Calez le potimarron dans un plat allant au four et versez la farce dans le potimarron. Mettez au four pour 45 minutes.",
+                "Servez chaud."
             ],
-            "image": "test.jpg",
+            "image": "potimarron.jpg",
             "favori": false
         },
         {
             "id": 39,
-            "nom": "Recette 39",
-            "type": "Dessert",
-            "regime": "Végétarien",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "St Jacques en persillade",
+            "type": "Entrée",
+            "regime": "Omnivore",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "10 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "12 noix de st jacques",
+                "1 botte de persil frais",
+                "1 gousse d'ail", 
+                "2 càs d'huile d'olive", 
+                "sel, poivre"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Nettoyez soigneusement les Saint-Jacquet et essuyez-les délicatement.",
+                "Épluchez la gousse d'ail et hachez-la finement. Ciselez le persil.",
+                "Versez l'huile d'olive dans une poêle et faites chauffer à feu doux.Salez et poivrez. Poêlez les Saint-Jacques pendant 2 à 3 min afin qu'elles soient bien dorées. Réservez.", 
+                "Dans la même poêle, placez l'ail et le persil. Laissez cuire pendant 2 à 3 min en remuant régulièrement.", 
+                "Replacez les Saint-Jacques dans la poêle et bien mélangez afin qu'elles soient enrobées de persillade. Servez bien chaud."
             ],
-            "image": "test.jpg",
+            "image": "st-jacques.jpg",
             "favori": false
         },
         {
             "id": 40,
-            "nom": "Recette 40",
-            "type": "Plat",
-            "regime": "Omnivore",
-            "temps_preparation": "20 min",
-            "temps_cuisson": "30 min",
+            "nom": "Gougères au comté",
+            "type": "Entrée",
+            "regime": "Végétarien",
+            "temps_preparation": "15 min",
+            "temps_cuisson": "35 min",
             "ingredients": [
-                "Ingrédient 1",
-                "Ingrédient 2",
-                "Ingrédient 3"
+                "75g de comté",
+                "3 oeufs",
+                "125g de farine", 
+                "50g de beurre",
+                "sel"
             ],
             "etapes": [
-                "Étape 1",
-                "Étape 2",
-                "Étape 3"
+                "Préchauffez le four à 180°C (thermostat 6).",
+                "Déposez dans une casserole le beurre coupé en morceaux. Faites-le fondre à feu doux avec le sel et 25 cl d’eau.",
+                "Lorsque le beurre est bien fondu, ajoutez la farine d’un seul coup. Mélangez vigoureusement à l’aide d’une spatule en bois, jusqu’à obtenir une pâte homogène, qui se décolle des parois de la casserole.", 
+                "Ajoutez les œufs un à un en mélangeant bien à chaque fois.",
+                "Râpez le Comté et ajoutez-le à la pâte à chou. Mélangez-bien pour le répartir uniformément.",
+                "Couvrez une plaque de cuisson de papier sulfurisé. Déposez-y à l’aide de deux petites cuillères, des tas de pâte suffisamment espacés car ils vont gonfler à la cuisson.", 
+                "Enfournez pendant 35 minutes. Lorsque les gougères au Comté sont bien dorées, sortez-les du four.",
+                "Laissez les gougères au Comté refroidir 1 ou 2 minutes pour ne pas vous brûler. Dégustez-les chaudes ou tièdes."
             ],
-            "image": "test.jpg",
+            "image": "gougeres.jpg",
             "favori": false
         }
     ]
