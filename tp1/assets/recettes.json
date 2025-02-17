@@ -1052,6 +1052,34 @@
             ],
             "image": "terrine.jpg",
             "favori": false
+        }, 
+        {
+            "id" : 44, 
+            "nom": "Gratin de gnocchis aux champignons et lardons",
+            "type": "Plat",
+            "regime": "Omnivore",
+            "temps_preparation": "10 min",
+            "temps_cuisson": "25 min",
+            "ingredients": [
+                "300g de gnocchi de pommes de terre",
+                "1 oignon",
+                "1 gousse d'ail", 
+                "250g de champignons de Paris",
+                "75g de lardons (de porc ou veggie)",
+                "20 cl de crème liquide", 
+                "30 g de cheddar rapé", 
+                "sel"
+            ],
+            "etapes": [
+                "Faites cuire les gnocchis dans une grande casserole d’eau bouillante salée.",
+                "Pelez et émincez l’oignon. Pelez, dégermez et hachez la gousse d’ail. Nettoyez et coupez les champignons en morceaux.",
+                "Dans une poêle, faites chauffer un filet d’huile. Faites-y revenir l’oignon 5 min avec une pincée de sel. Ajoutez les champignons, les lardons et l’ail. Laissez cuire 5 à 10 min jusqu’à ce que les champignons aient réduits.", 
+                "Pendant ce temps, plongez les gnocchis dans une casserole d’eau bouillante salée et faites-les cuire selon le temps indiqué sur le paquet.",
+                "Egouttez les gnocchi et mélangez-les avec la crème et le contenu de la poêle. Versez dans un plat à gratin.",
+                "Saupoudrez de cheddar râpé et faites gratiner 15-20 min dans le four préchauffé à 180 °C."
+            ],
+            "image": "gratin-gnocchis.jpg",
+            "favori": false
         }
     ]
 }

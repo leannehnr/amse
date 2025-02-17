@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'recette_model.dart';
 
 class Favoris {

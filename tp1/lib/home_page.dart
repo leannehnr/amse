@@ -53,7 +53,7 @@ class HomePageState extends State<HomePage> {
     if (recettes.isNotEmpty) {
       recettes.shuffle(); // Mélange la liste des recettes
       setState(() {
-        recettesAleatoires = recettes.take(5).toList(); // Prend les 5 premières après mélange
+        recettesAleatoires = recettes.take(8).toList(); // Prend les 5 premières après mélange
       });
     }
   }

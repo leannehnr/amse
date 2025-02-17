@@ -26,7 +26,7 @@ class SelectionPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
           textStyle: TextStyle(fontSize: 20),
         ),
         onPressed: () {

@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:tp1/gestion_fav.dart';
-import 'gestion_fav.dart';
-import 'recette_model.dart';
 import 'recette_page.dart';
 
 class FavorisPage extends StatefulWidget {
@@ -16,7 +13,7 @@ class FavorisPageState extends State<FavorisPage> {
     return Scaffold(
       appBar: AppBar(title: Text("Liste des Recettes Favoris")),
       body: Favoris.favoris.isEmpty
-          ? Center(child: CircularProgressIndicator()) // Loader en attendant
+          ? Center(child: Text("Pas de favoris pour l'instant."))
           : ListView.builder(
               itemCount: Favoris.favoris.length,
               itemBuilder: (context, index) {
