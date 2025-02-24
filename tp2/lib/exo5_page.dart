@@ -8,32 +8,36 @@ class Exo5Page extends StatefulWidget {
 
 class Exo5PageState extends State<Exo5Page> {
   List<Tile> tiles = []; 
-  double size = 4;  // Le nombre de colonnes par défaut
+  double size = 3;  // Le nombre de colonnes par défaut
 
   @override
   void initState(){
     tiles.clear(); 
-    for (int i = -(size/2).toInt(); i < (size/2).toInt(); i++) {
-      for(int j =-(size/2).toInt(); j < (size/2).toInt(); j++){
-        tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(j.toDouble(), i.toDouble())));
+    for (int i = 0; i < size.toInt(); i++) {
+        for (int j = 0; j < size.toInt(); j++) {
+          double alignX = (j / (size - 1)) * 2 - 1; // Entre -1 et 1
+          double alignY = (i / (size - 1)) * 2 - 1;
+          tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(alignX, alignY), factor:(1/size)));
+        }
       }
-    }
     print(tiles.length);
   }
 
-  /*void createGrid() {
-    tiles.clear; 
+  void createGrid() {
+    tiles.clear(); 
     setState(() {
-      for (int i = -(size/2).toInt(); i <= (size/2).toInt(); i++) {
-        for(int j =-(size/2).toInt(); j <= (size/2).toInt(); j++){
-          tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(j.toDouble(), i.toDouble())));
+      for (int i = 0; i < size.toInt(); i++) {
+        for (int j = 0; j < size.toInt(); j++) {
+          double alignX = (j / (size - 1)) * 2 - 1; // Entre -1 et 1
+          double alignY = (i / (size - 1)) * 2 - 1;
+          tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(alignX, alignY), factor: 1/size));
         }
       }
     });
     
     print(tiles.length); 
   }
-  */
+  
   Widget createTileWidgetFrom(Tile tile) {
     return InkWell(
       child: tile.croppedImageTile(),
@@ -56,8 +60,8 @@ class Exo5PageState extends State<Exo5Page> {
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: size.toInt(),
-                crossAxisSpacing: 8.0,
-                mainAxisSpacing: 8.0,
+                crossAxisSpacing: 1.0,
+                mainAxisSpacing: 1.0,
               ),
               itemCount: tiles.length,
               itemBuilder: (context, index) {
@@ -76,12 +80,12 @@ class Exo5PageState extends State<Exo5Page> {
           Text("Scale"), 
           Slider(
             value: size,
-            min: 1,
-            max: 10,
+            min: 3,
+            max: 7,
             onChanged: (value) {
               setState(() {
-                size = value;
-                initState(); 
+                size = value.roundToDouble();
+                createGrid(); 
               });
             },
           ),
