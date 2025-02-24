@@ -63,7 +63,6 @@ class GeneratorPageState extends State<GeneratorPage> {
         recettesAffichees = recettes.where((recette) => recette.type == widget.typeSelectionne).toList();
       }
     });
-    print(recettesAffichees.length);
   }
 
   void _toggleFavori(Recette recette) async {
