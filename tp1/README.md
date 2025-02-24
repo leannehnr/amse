@@ -1,16 +1,13 @@
-# tp1
+# TP1
 
-A new Flutter project.
+Application de gestion de médias (recettes de cuisine). 
+Réalisé dans le cadre de l'UV AMSE à l'IMT Nord Europe, développée par Léanne HENRY. 
 
-## Getting Started
+## Execution du code 
+git clone https://github.com/leannehnr/amse.git
+cd /amse/tp1
+flutter clean
+flutter pub get
+flutter run
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

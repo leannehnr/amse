@@ -5,6 +5,9 @@ import 'recette_model.dart';
 import 'recette_page.dart';
 import 'gestion_fav.dart'; 
 
+
+// Générateur de 8 recettes aléatoirement
+
 class HomePage extends StatefulWidget {  // 🔥 Remplace ici par le vrai nom de ta page d'accueil
   @override
   HomePageState createState() => HomePageState();
@@ -53,7 +56,7 @@ class HomePageState extends State<HomePage> {
     if (recettes.isNotEmpty) {
       recettes.shuffle(); // Mélange la liste des recettes
       setState(() {
-        recettesAleatoires = recettes.take(8).toList(); // Prend les 5 premières après mélange
+        recettesAleatoires = recettes.take(8).toList(); // Prend les 8 premières après mélange
       });
     }
   }
@@ -62,10 +65,10 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Accueil des Recettes")),
-      body: SingleChildScrollView(  // 🔥 Permet le défilement vertical
+      body: SingleChildScrollView(  // Permet le défilement vertical
         child: Column(
           children: [
-            // 🔥 Liste verticale des recettes aléatoires
+            // Liste verticale des recettes aléatoires
             recettesAleatoires.isEmpty
                 ? Center(child: CircularProgressIndicator())
                 : Column(
@@ -77,7 +80,7 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  // 🔥 Carte pour afficher une recette (PLEINE LARGEUR)
+  // Carte pour afficher une recette
   Widget _buildRecetteCard(Recette recette) {
     return GestureDetector(
       onTap: () {
@@ -92,26 +95,26 @@ class HomePageState extends State<HomePage> {
         margin: EdgeInsets.symmetric(vertical: 5), // Marge autour de la carte
         elevation: 3,
         child: Container(
-          width: double.infinity, // 🔥 Fait la largeur complète de l'écran
+          width: double.infinity, // Fait la largeur complète de l'écran
           padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
                 recette.image,
-                width: double.infinity, // 🔥 Largeur complète
+                width: double.infinity,
                 height: 200, // Taille fixe
-                fit: BoxFit.cover, // Ajuste bien l'image
+                fit: BoxFit.cover, // Ajuste l'image
               ),
               SizedBox(height: 10),
               Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween, // 🔥 Espace entre le texte et l'icône
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espace entre le texte et l'icône
               children: [
                 Expanded(
                   child: Text(
                     recette.nom,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    overflow: TextOverflow.ellipsis, // 🔥 Coupe le texte si trop long
+                    overflow: TextOverflow.ellipsis, // Coupe le texte si trop long
                   ),
                 ),
                 IconButton(
