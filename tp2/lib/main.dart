@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(debugShowCheckedModeBanner: false,
-    title: 'Gestion de recettes', 
-    theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFD8C3A5)),),
+    title: 'Taquin', 
+    theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Color(0x00000000)),),
     home: MainPage(),
     );
   }
