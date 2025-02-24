@@ -16,6 +16,7 @@ class Exo2PageState extends State<Exo2Page> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Exo 2"),
+        centerTitle: true,
       ),
       body: Column(
         children: [

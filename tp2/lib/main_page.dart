@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tp2/exo1_page.dart';
 import 'package:tp2/exo2_page.dart';
 import 'package:tp2/exo3_page.dart';
+import 'package:tp2/exo4_page.dart';
+import 'package:tp2/exo5_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -9,19 +11,6 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
-  int _selectedIndex = 0; // Index de la page active
-
-  final List<Widget> _pages = [
-    Exo1Page(), 
-    Exo2Page(), 
-    Exo3Page()
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +50,29 @@ class MainPageState extends State<MainPage> {
                   builder: (context) => Exo3Page(),
                 ),
               );}, 
-              child: Text("Exo 3"))
+              child: Text("Exo 3")), 
+              SizedBox(height: 15),
+              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                  textStyle: TextStyle(fontSize: 20),
+                ),
+                onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DisplayTileWidget(),
+                ),
+              );}, 
+              child: Text("Exo 4")),
+              SizedBox(height: 15),
+              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                  textStyle: TextStyle(fontSize: 20),
+                ),
+                onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Exo5Page(),
+                ),
+              );}, 
+              child: Text("Exo 5"))
             ],
           ),
         ],

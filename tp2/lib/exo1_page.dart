@@ -13,6 +13,7 @@ class Exo1PageState extends State<Exo1Page> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Exo 1"),
+        centerTitle: true,
       ),
       body: Image(image: NetworkImage("https://picsum.photos/1024/512")), // Affiche la page sélectionnée
     );
