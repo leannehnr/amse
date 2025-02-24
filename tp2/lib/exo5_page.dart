@@ -7,22 +7,34 @@ class Exo5Page extends StatefulWidget {
 }
 
 class Exo5PageState extends State<Exo5Page> {
-  List<Tile> tile = []; 
-  double size = 1; 
-  /*
-  Tile tile1 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(-1, -1));
-  Tile tile2 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(0, -1));
-  Tile tile3 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(1, -1));
-  Tile tile4 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(-1, 0));
-  Tile tile5 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(0, 0));
-  Tile tile6 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(1, 0));
-  Tile tile7 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(-1, 1));
-  Tile tile8 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(0, 1));
-  Tile tile9 = Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(1, 1));  
+  List<Tile> tiles = []; 
+  double size = 4;  // Le nombre de colonnes par défaut
+
+  @override
+  void initState(){
+    tiles.clear(); 
+    for (int i = -(size/2).toInt(); i < (size/2).toInt(); i++) {
+      for(int j =-(size/2).toInt(); j < (size/2).toInt(); j++){
+        tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(j.toDouble(), i.toDouble())));
+      }
+    }
+    print(tiles.length);
+  }
+
+  /*void createGrid() {
+    tiles.clear; 
+    setState(() {
+      for (int i = -(size/2).toInt(); i <= (size/2).toInt(); i++) {
+        for(int j =-(size/2).toInt(); j <= (size/2).toInt(); j++){
+          tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(j.toDouble(), i.toDouble())));
+        }
+      }
+    });
+    
+    print(tiles.length); 
+  }
   */
-  
   Widget createTileWidgetFrom(Tile tile) {
-  
     return InkWell(
       child: tile.croppedImageTile(),
       onTap: () {
@@ -30,7 +42,7 @@ class Exo5PageState extends State<Exo5Page> {
       },
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,78 +52,41 @@ class Exo5PageState extends State<Exo5Page> {
       ),
       body: Column(
         children: [
-          GridView.count(crossAxisCount: size.toInt(), 
-          children: <Widget>[
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: size.toInt(),
+                crossAxisSpacing: 8.0,
+                mainAxisSpacing: 8.0,
+              ),
+              itemCount: tiles.length,
+              itemBuilder: (context, index) {
+                return SizedBox(
+                  width: 512/size,
+                  height: 512/size,
+                  child: Container(
                     margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile1))), 
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile2))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile3))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile4))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile5))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile6))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile7))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile8))),
-            SizedBox(
-                width: 128.0,
-                height: 128.0,
-                child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: createTileWidgetFrom(tile9))),
-          ],),
+                    child: createTileWidgetFrom(tiles[index]),
+                  ),
+                );
+              },
+            ),
+          ),
           SizedBox(height: 15),
-      Text("Scale"), 
-      Slider(value: size,
-        min: 1,
-        max: 10,
-        onChanged: (value){
-          setState(() {
-            size = value;
-            });
-        },),
+          Text("Scale"), 
+          Slider(
+            value: size,
+            min: 1,
+            max: 10,
+            onChanged: (value) {
+              setState(() {
+                size = value;
+                initState(); 
+              });
+            },
+          ),
         ],
       ),
-      
-    ); 
+    );
   }
 }
-
-  
