@@ -20,7 +20,6 @@ class Exo5PageState extends State<Exo5Page> {
           tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(alignX, alignY), factor:(1/size)));
         }
       }
-    print(tiles.length);
   }
 
   void createGrid() {
@@ -34,8 +33,6 @@ class Exo5PageState extends State<Exo5Page> {
         }
       }
     });
-    
-    print(tiles.length); 
   }
   
   Widget createTileWidgetFrom(Tile tile) {

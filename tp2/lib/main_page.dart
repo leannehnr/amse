@@ -4,6 +4,7 @@ import 'package:tp2/exo2_page.dart';
 import 'package:tp2/exo3_page.dart';
 import 'package:tp2/exo4_page.dart';
 import 'package:tp2/exo5_page.dart';
+import 'package:tp2/exo6_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -72,7 +73,18 @@ class MainPageState extends State<MainPage> {
                   builder: (context) => Exo5Page(),
                 ),
               );}, 
-              child: Text("Exo 5"))
+              child: Text("Exo 5")), 
+              SizedBox(height: 15),
+              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                  textStyle: TextStyle(fontSize: 20),
+                ),
+                onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PositionedTiles(),
+                ),
+              );}, 
+              child: Text("Exo 6"))
             ],
           ),
         ],
