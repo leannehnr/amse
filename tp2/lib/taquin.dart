@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Tile {
+  String imageURL;
   Alignment alignment;
-  double factor;
-  Color color;
+  double factor; 
 
-  Tile({required this.alignment, required this.factor, required this.color});
-  
-  Widget coloredBox() {
-    return Container(
-        color: color,
-        child: Padding(
-          padding: EdgeInsets.all(70.0),
-        ));
-  }
+  Tile({required this.imageURL, required this.alignment, required this.factor});
 
   Widget croppedImageTile() {
     return FittedBox(
@@ -24,7 +16,7 @@ class Tile {
             alignment: alignment,
             widthFactor: factor,
             heightFactor: factor,
-            child: coloredBox(),
+            child: Image.network(imageURL),
           ),
         ),
       ),
@@ -32,12 +24,13 @@ class Tile {
   }
 }
 
-class Exo6bPage extends StatefulWidget {
+
+class Taquin extends StatefulWidget {
   @override
-  Exo6bPageState createState() => Exo6bPageState();
+  TaquinState createState() => TaquinState();
 }
 
-class Exo6bPageState extends State<Exo6bPage> {
+class TaquinState extends State<Taquin> {
   List<Tile> tiles = [];
   double size = 3; // Taille de la grille (doit rester en double)
   late int emptyTileIndex; // Stocke l'index de la case blanche
@@ -67,11 +60,11 @@ class Exo6bPageState extends State<Exo6bPage> {
       for (int j = 0; j < size.toInt(); j++) {
         double alignX = (j / (size - 1)) * 2 - 1;
         double alignY = (i / (size - 1)) * 2 - 1;
-        tiles.add(Tile(alignment: Alignment(alignX, alignY), factor: 1 / size, color: Colors.blueGrey));
+        tiles.add(Tile(imageURL: 'https://picsum.photos/512', alignment: Alignment(alignX, alignY), factor:(1/size)));
       }
     }
     emptyTileIndex = tiles.length - 1;
-    tiles[emptyTileIndex] = Tile(alignment: Alignment(1, 1), factor: 1 / size, color: Colors.white);
+    tiles[emptyTileIndex] = Tile(imageURL: 'https://st3.depositphotos.com/13349494/18517/i/450/depositphotos_185170938-stock-photo-simple-light-gray-abstract-background.jpg', alignment: Alignment(1, 1), factor:(1/size));
   }
 
   Widget createTileWidgetFrom(Tile tile, int index) {

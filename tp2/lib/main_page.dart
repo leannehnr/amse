@@ -6,6 +6,7 @@ import 'package:tp2/exo4_page.dart';
 import 'package:tp2/exo5_page.dart';
 import 'package:tp2/exo6_page.dart';
 import 'package:tp2/exo6b_page.dart';
+import 'package:tp2/taquin.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -13,96 +14,57 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
+  final List<Map<String, dynamic>> exercises = [
+    {"title": "Exo 1", "page": Exo1Page()},
+    {"title": "Exo 2", "page": Exo2Page()},
+    {"title": "Exo 3", "page": Exo3Page()},
+    {"title": "Exo 4", "page": DisplayTileWidget()},
+    {"title": "Exo 5", "page": Exo5Page()},
+    {"title": "Exo 6", "page": PositionedTiles()},
+    {"title": "Exo 6b", "page": Exo6bPage()},
+    {"title": "Taquin", "page": Taquin()},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Exo1Page(),
-                ),
-              );}, 
-              child: Text("Exo 1")), 
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Exo2Page(),
-                ),
-              );}, 
-              child: Text("Exo 2")), 
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Exo3Page(),
-                ),
-              );}, 
-              child: Text("Exo 3")), 
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DisplayTileWidget(),
-                ),
-              );}, 
-              child: Text("Exo 4")),
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Exo5Page(),
-                ),
-              );}, 
-              child: Text("Exo 5")), 
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PositionedTiles(),
-                ),
-              );}, 
-              child: Text("Exo 6")), 
-              SizedBox(height: 15),
-              ElevatedButton(style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-                  textStyle: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Exo6bPage(),
-                ),
-              );}, 
-              child: Text("Exo 6b"))
-            ],
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: 100.0,
+            floating: false,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text("Menu des Exercices"),
+              centerTitle: true,
+              background: Container(color: const Color.fromARGB(255, 202, 167, 235)),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                      textStyle: TextStyle(fontSize: 20),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => exercises[index]["page"]),
+                      );
+                    },
+                    child: Text(exercises[index]["title"]),
+                  ),
+                );
+              },
+              childCount: exercises.length,
+            ),
           ),
         ],
-      )
-
-      
+      ),
     );
   }
 }
