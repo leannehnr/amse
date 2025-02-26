@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/exo6_page.dart';
 
 class Tile {
   String imageURL;
@@ -31,29 +32,64 @@ class Taquin extends StatefulWidget {
 }
 
 class TaquinState extends State<Taquin> {
+  
   List<Tile> tiles = [];
-  double size = 3; // Taille de la grille (doit rester en double)
-  late int emptyTileIndex; // Stocke l'index de la case blanche
+  double size = 3;          // Taille de la grille (doit rester en double)
+  late int emptyTileIndex;  // Stocke l'index de la case blanche
+  int move = 0;             // Nombre de mouvements pour mélanger
+
+  void _shuffleTiles(int moves) {
+    int sizeInt = size.toInt();
+    List<List<int>> directions = [
+      [-1, 0], // Haut
+      [1, 0],  // Bas
+      [0, -1], // Gauche
+      [0, 1]   // Droite
+    ];
+
+    int prevRow = -1, prevCol = -1;
+
+    for (int i = 0; i < moves; i++) {
+      int emptyRow = emptyTileIndex ~/ sizeInt;
+      int emptyCol = emptyTileIndex % sizeInt;
+
+      // Déterminer les mouvements possibles
+      List<List<int>> possibleMoves = directions.where((d) {
+        int newRow = emptyRow + d[0];
+        int newCol = emptyCol + d[1];
+        return newRow >= 0 && newRow < sizeInt && newCol >= 0 && newCol < sizeInt;
+      }).toList();
+
+      // Éviter d'annuler le mouvement précédent
+      List<List<int>> filteredMoves = possibleMoves.where((d) {
+        int newRow = emptyRow + d[0];
+        int newCol = emptyCol + d[1];
+        return !(newRow == prevRow && newCol == prevCol);
+      }).toList();
+
+      if (filteredMoves.isEmpty) {
+        filteredMoves = possibleMoves; // Si tous les mouvements annulent, on prend quand même un
+      }
+
+      var move = filteredMoves[random.nextInt(filteredMoves.length)];
+      int newRow = emptyRow + move[0];
+      int newCol = emptyCol + move[1];
+
+      // Effectuer l'échange
+      swapTiles(emptyRow, emptyCol, newRow, newCol);
+
+      // Mettre à jour les positions
+      prevRow = emptyRow;
+      prevCol = emptyCol;
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     _initializeTiles();
   }
-/*
-  void createGrid() {
-    tiles.clear(); 
-    setState(() {
-      for (int i = 0; i < size.toInt(); i++) {
-        for (int j = 0; j < size.toInt(); j++) {
-          double alignX = (j / (size - 1)) * 2 - 1; // Entre -1 et 1
-          double alignY = (i / (size - 1)) * 2 - 1;
-          tiles.add(Tile(alignment: Alignment(alignX, alignY), factor: 1/size, color: Colors.blueGrey));
-        }
-      }
-    });
-  }
-*/
+
   void _initializeTiles() {
     tiles.clear();
     for (int i = 0; i < size.toInt(); i++) {
@@ -64,7 +100,8 @@ class TaquinState extends State<Taquin> {
       }
     }
     emptyTileIndex = tiles.length - 1;
-    tiles[emptyTileIndex] = Tile(imageURL: 'https://st3.depositphotos.com/13349494/18517/i/450/depositphotos_185170938-stock-photo-simple-light-gray-abstract-background.jpg', alignment: Alignment(1, 1), factor:(1/size));
+    tiles[emptyTileIndex] = Tile(imageURL: 'https://st4.depositphotos.com/5654532/25554/i/450/depositphotos_255540166-stock-illustration-snake-leather-white-paper-texture.jpg', alignment: Alignment(1, 1), factor:(1/size));
+    _shuffleTiles(move); 
   }
 
   Widget createTileWidgetFrom(Tile tile, int index) {
@@ -95,7 +132,7 @@ class TaquinState extends State<Taquin> {
       Tile tmp = tiles[idx1];
       tiles[idx1] = tiles[idx2];
       tiles[idx2] = tmp;
-      emptyTileIndex = idx2; // Mise à jour de l'index de la case blanche
+      emptyTileIndex = idx2; 
     });
   }
 
@@ -103,11 +140,46 @@ class TaquinState extends State<Taquin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Moving tile'),
+        title: Text('Taquin'),
         centerTitle: true,
       ),
       body: Column(
         children: [
+          Row(children: [
+            Text("Niveau de mélange : "),
+            ElevatedButton( onPressed: () {
+              setState(() {
+                move = 5; 
+                _initializeTiles();
+              });
+            }, 
+            child: Text('5'),
+            ), 
+            ElevatedButton( onPressed: () {
+              setState(() {
+                move = 10; 
+                _initializeTiles();
+              });
+            }, 
+            child: Text('10'),
+            ), 
+            ElevatedButton( onPressed: () {
+              setState(() {
+                move = 15; 
+                _initializeTiles();
+              });
+            }, 
+            child: Text('15'),
+            ), 
+            ElevatedButton( onPressed: () {
+              setState(() {
+                move = 20; 
+                _initializeTiles();
+              });
+            }, 
+            child: Text('20'),
+            )
+          ],), 
           Expanded(
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
