@@ -7,6 +7,7 @@ import 'package:tp2/exo5_page.dart';
 import 'package:tp2/exo6_page.dart';
 import 'package:tp2/exo6b_page.dart';
 import 'package:tp2/taquin.dart';
+import 'package:tp2/taquinV2_select.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class MainPageState extends State<MainPage> {
     {"title": "Exo 6", "page": PositionedTiles()},
     {"title": "Exo 6b", "page": Exo6bPage()},
     {"title": "Taquin", "page": Taquin()},
+    {"title": "Taquin 2", "page": TaquinV2Select()},
   ];
 
   @override
