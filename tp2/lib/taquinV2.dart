@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:image_picker/image_picker.dart';
-import 'package:collection/collection.dart';
 import 'dart:io';
 
 class Tile {
@@ -212,6 +211,7 @@ class Taquinv2State extends State<Taquinv2> {
       tiles[idx1] = tiles[idx2];
       tiles[idx2] = tmp;
       emptyTileIndex = idx2;
+      solver();
     });
   }
 
@@ -221,6 +221,7 @@ class Taquinv2State extends State<Taquinv2> {
       setState(() {
         move = newMove;
         _initializeTiles();
+        solver();
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -242,11 +243,23 @@ class Taquinv2State extends State<Taquinv2> {
     return true;
   }
 
+  int nbMovesRest = 0;
   int solver() {
-    if (moveHistory.isEmpty) {
-      return move;
+    if (moveHistory.length == move && nbCoups == 0) {
+      nbMovesRest = move;
+      return nbMovesRest;
     } else {
-      return move + nbCoups;
+      // si le dernier mouvement est le mouvement opposé de l'avant dernier mouvement
+      if (moveHistory.length > 1 &&
+          moveHistory[moveHistory.length - 1][0] ==
+              -moveHistory[moveHistory.length - 2][0] &&
+          moveHistory[moveHistory.length - 1][1] ==
+              -moveHistory[moveHistory.length - 2][1]) {
+        moveHistory.removeLast();
+        moveHistory.removeLast();
+        return nbMovesRest - 1;
+      }
+      return nbMovesRest + 1;
     }
   }
 
