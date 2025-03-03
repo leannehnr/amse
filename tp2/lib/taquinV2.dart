@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:image_picker/image_picker.dart';
+import 'package:collection/collection.dart';
 import 'dart:io';
 
 class Tile {
@@ -41,6 +42,8 @@ class Taquinv2 extends StatefulWidget {
 }
 
 class Taquinv2State extends State<Taquinv2> {
+  List<List<int>> moveHistory =
+      []; // Liste des mouvements effectués pendant le mélange
   final FocusNode _focusNode = FocusNode(); //affichage clavier
   List<Tile> tiles = [];
   double size = 3; // Taille de la grille
@@ -53,6 +56,13 @@ class Taquinv2State extends State<Taquinv2> {
   final Random random = Random(); // Générateur aléatoire
   File? _image;
   final ImagePicker _picker = ImagePicker();
+  //directions possibles de mouvements
+  List<List<int>> directions = [
+    [-1, 0], // Haut
+    [1, 0], // Bas
+    [0, -1], // Gauche
+    [0, 1] // Droite
+  ];
 
   @override
   void dispose() {
@@ -63,13 +73,6 @@ class Taquinv2State extends State<Taquinv2> {
 
   void _shuffleTiles(int moves) {
     int sizeInt = size.toInt();
-    List<List<int>> directions = [
-      [-1, 0], // Haut
-      [1, 0], // Bas
-      [0, -1], // Gauche
-      [0, 1] // Droite
-    ];
-
     int prevRow = -1, prevCol = -1;
 
     for (int i = 0; i < moves; i++) {
@@ -100,7 +103,7 @@ class Taquinv2State extends State<Taquinv2> {
       var move = filteredMoves[random.nextInt(filteredMoves.length)];
       int newRow = emptyRow + move[0];
       int newCol = emptyCol + move[1];
-
+      moveHistory.add(move);
       // Effectuer l'échange
       swapTiles(emptyRow, emptyCol, newRow, newCol);
 
@@ -239,6 +242,14 @@ class Taquinv2State extends State<Taquinv2> {
     return true;
   }
 
+  int solver() {
+    if (moveHistory.isEmpty) {
+      return move;
+    } else {
+      return move + nbCoups;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -334,6 +345,7 @@ class Taquinv2State extends State<Taquinv2> {
                     },
                   ),
                 ),
+                Text("Nombre de coups avant la fin : ${solver()}"),
                 SizedBox(height: 15),
                 Text("Taille du taquin"),
                 Slider(
