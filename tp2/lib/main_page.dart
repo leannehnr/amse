@@ -10,6 +10,8 @@ import 'package:tp2/taquin.dart';
 import 'package:tp2/taquinV2_select.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   MainPageState createState() => MainPageState();
 }

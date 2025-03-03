@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 
 class Exo3Page extends StatefulWidget {
+  const Exo3Page({super.key});
+
   @override
   Exo3PageState createState() => Exo3PageState();
 }

@@ -28,12 +28,14 @@ class Tile {
 }
 
 class Taquin extends StatefulWidget {
+  const Taquin({super.key});
+
   @override
   TaquinState createState() => TaquinState();
 }
 
 class TaquinState extends State<Taquin> {
-  FocusNode _focusNode = FocusNode(); //affichage clavier
+  final FocusNode _focusNode = FocusNode(); //affichage clavier
   List<Tile> tiles = [];
   double size = 3; // Taille de la grille
   late int emptyTileIndex; // Index de la case vide
@@ -122,7 +124,7 @@ class TaquinState extends State<Taquin> {
         imageURL:
             'https://st4.depositphotos.com/5654532/25554/i/450/depositphotos_255540166-stock-illustration-snake-leather-white-paper-texture.jpg',
         alignment: Alignment(1, 1),
-        factor: (1 / size), id: (size*size).truncate());
+        factor: (1 / size), id: (size*size).toInt());
     initTiles = tiles; 
     _shuffleTiles(move);
   }
@@ -135,11 +137,11 @@ class TaquinState extends State<Taquin> {
   }
 
   void _onTileTap(int tappedIndex) {
-    int cols = size as int;
-    int emptyRow = emptyTileIndex ~/ cols;
-    int emptyCol = emptyTileIndex % cols;
-    int tappedRow = tappedIndex ~/ cols;
-    int tappedCol = tappedIndex % cols;
+    int cols = size.toInt();
+    int emptyRow = (emptyTileIndex ~/ cols).toInt();
+    int emptyCol = (emptyTileIndex % cols).toInt();
+    int tappedRow = (tappedIndex ~/ cols).toInt();
+    int tappedCol = (tappedIndex % cols).toInt();
 
     if ((tappedRow == emptyRow && (tappedCol - emptyCol).abs() == 1) ||
         (tappedCol == emptyCol && (tappedRow - emptyRow).abs() == 1)) {
@@ -149,8 +151,8 @@ class TaquinState extends State<Taquin> {
   }
 
   void swapTiles(int i1, int j1, int i2, int j2) {
-    int idx1 = (i1 * size + j1) as int;
-    int idx2 = (i2 * size + j2) as int;
+    int idx1 = (i1 * size + j1).toInt();
+    int idx2 = (i2 * size + j2).toInt();
 
     setState(() {
       Tile tmp = tiles[idx1];

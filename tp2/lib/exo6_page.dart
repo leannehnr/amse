@@ -25,11 +25,11 @@ class Tile {
 class TileWidget extends StatelessWidget {
   final Tile tile;
 
-  TileWidget(this.tile);
+  const TileWidget(this.tile, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return this.coloredBox();
+    return coloredBox();
   }
 
   Widget coloredBox() {
@@ -41,9 +41,11 @@ class TileWidget extends StatelessWidget {
   }
 }
 
-void main() => runApp(new MaterialApp(home: PositionedTiles()));
+void main() => runApp(MaterialApp(home: PositionedTiles()));
 
 class PositionedTiles extends StatefulWidget {
+  const PositionedTiles({super.key});
+
   @override
   State<StatefulWidget> createState() => PositionedTilesState();
 }
@@ -60,7 +62,8 @@ class PositionedTilesState extends State<PositionedTiles> {
       ),
       body: Row(children: tiles),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.sentiment_very_satisfied), onPressed: swapTiles),
+          onPressed: swapTiles,
+          child: Icon(Icons.sentiment_very_satisfied)),
     );
   }
 

@@ -33,6 +33,8 @@ class Tile {
 }
 
 class Exo6bPage extends StatefulWidget {
+  const Exo6bPage({super.key});
+
   @override
   Exo6bPageState createState() => Exo6bPageState();
 }

@@ -24,9 +24,11 @@ class Tile {
   }
 }
 
-Tile tile = new Tile(
+Tile tile = Tile(
     imageURL: 'https://picsum.photos/512', alignment: Alignment(0, 0), factor:0.3);// alignement(largeur, hauteur)
 class DisplayTileWidget extends StatelessWidget {
+  const DisplayTileWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,7 @@ class DisplayTileWidget extends StatelessWidget {
             child: Container(
                 margin: EdgeInsets.all(20.0),
                 child: createTileWidgetFrom(tile))),
-        Container(
+        SizedBox(
             height: 200,
             child: Image.network('https://picsum.photos/512',
                 fit: BoxFit.cover))

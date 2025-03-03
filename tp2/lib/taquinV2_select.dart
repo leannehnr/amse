@@ -3,6 +3,8 @@ import 'taquinV2.dart';
 
 
 class TaquinV2Select extends StatelessWidget {
+  const TaquinV2Select({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
