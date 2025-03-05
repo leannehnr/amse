@@ -41,6 +41,7 @@ class Taquinv2 extends StatefulWidget {
 }
 
 class Taquinv2State extends State<Taquinv2> {
+  int nbMovesRest = 0;
   List<List<int>> moveHistory =
       []; // Liste des mouvements effectués pendant le mélange
   final FocusNode _focusNode = FocusNode(); //affichage clavier
@@ -72,13 +73,15 @@ class Taquinv2State extends State<Taquinv2> {
 
   void _shuffleTiles(int moves) {
     int sizeInt = size.toInt();
+    moveHistory.clear();
+    nbMovesRest = 0;
     int prevRow = -1, prevCol = -1;
 
     for (int i = 0; i < moves; i++) {
       int emptyRow = emptyTileIndex ~/ sizeInt;
       int emptyCol = emptyTileIndex % sizeInt;
 
-      // Déterminer les mouvements possibles
+      // mouvements possibles
       List<List<int>> possibleMoves = directions.where((d) {
         int newRow = emptyRow + d[0];
         int newCol = emptyCol + d[1];
@@ -88,7 +91,7 @@ class Taquinv2State extends State<Taquinv2> {
             newCol < sizeInt;
       }).toList();
 
-      // Éviter d'annuler le mouvement précédent
+      // Éviter d'annuler le mouvement d'avant
       List<List<int>> filteredMoves = possibleMoves.where((d) {
         int newRow = emptyRow + d[0];
         int newCol = emptyCol + d[1];
@@ -103,13 +106,14 @@ class Taquinv2State extends State<Taquinv2> {
       int newRow = emptyRow + move[0];
       int newCol = emptyCol + move[1];
       moveHistory.add(move);
-      // Effectuer l'échange
+
       swapTiles(emptyRow, emptyCol, newRow, newCol);
 
       // Mettre à jour les positions
       prevRow = emptyRow;
       prevCol = emptyCol;
     }
+    print("Move history : $moveHistory");
   }
 
   @override
@@ -198,7 +202,10 @@ class Taquinv2State extends State<Taquinv2> {
     if ((tappedRow == emptyRow && (tappedCol - emptyCol).abs() == 1) ||
         (tappedCol == emptyCol && (tappedRow - emptyRow).abs() == 1)) {
       swapTiles(emptyRow, emptyCol, tappedRow, tappedCol);
+      moveHistory.add([tappedRow - emptyRow, tappedCol - emptyCol]);
       nbCoups += 1;
+      solver();
+      print("Move history : $moveHistory");
     }
   }
 
@@ -211,7 +218,6 @@ class Taquinv2State extends State<Taquinv2> {
       tiles[idx1] = tiles[idx2];
       tiles[idx2] = tmp;
       emptyTileIndex = idx2;
-      solver();
     });
   }
 
@@ -243,7 +249,6 @@ class Taquinv2State extends State<Taquinv2> {
     return true;
   }
 
-  int nbMovesRest = 0;
   int solver() {
     if (moveHistory.length == move && nbCoups == 0) {
       nbMovesRest = move;
@@ -257,7 +262,8 @@ class Taquinv2State extends State<Taquinv2> {
               -moveHistory[moveHistory.length - 2][1]) {
         moveHistory.removeLast();
         moveHistory.removeLast();
-        return nbMovesRest - 1;
+        nbMovesRest = moveHistory.length;
+        return nbMovesRest;
       }
       return nbMovesRest + 1;
     }
@@ -358,7 +364,7 @@ class Taquinv2State extends State<Taquinv2> {
                     },
                   ),
                 ),
-                Text("Nombre de coups avant la fin : ${solver()}"),
+                Text("Nombre de coups avant la fin : $nbMovesRest"),
                 SizedBox(height: 15),
                 Text("Taille du taquin"),
                 Slider(
