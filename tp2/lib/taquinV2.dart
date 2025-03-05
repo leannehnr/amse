@@ -8,26 +8,50 @@ class Tile {
   Alignment alignment;
   double factor;
   int id;
+  bool showNumbers;
 
   Tile(
       {required this.image,
       required this.alignment,
       required this.factor,
-      required this.id});
+      required this.id,
+      required this.showNumbers});
 
   Widget croppedImageTile() {
-    return FittedBox(
-      fit: BoxFit.fill,
-      child: ClipRect(
-        child: Container(
-          child: Align(
-            alignment: alignment,
-            widthFactor: factor,
-            heightFactor: factor,
-            child: image,
+    return Stack(
+      children: [
+        FittedBox(
+          fit: BoxFit.fill,
+          child: ClipRect(
+            child: Align(
+              alignment: alignment,
+              widthFactor: factor,
+              heightFactor: factor,
+              child: image,
+            ),
           ),
         ),
-      ),
+        if (showNumbers) // Affiche le numéro uniquement si showNumbers est true
+          Positioned(
+            top: 5,
+            left: 5,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                id.toString(),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
@@ -41,6 +65,7 @@ class Taquinv2 extends StatefulWidget {
 }
 
 class Taquinv2State extends State<Taquinv2> {
+  bool _showNumbers = false;
   int nbMovesRest = 0;
   List<List<int>> moveHistory =
       []; // Liste des mouvements effectués pendant le mélange
@@ -55,7 +80,9 @@ class Taquinv2State extends State<Taquinv2> {
       TextEditingController(); // Contrôleur pour le TextField
   final Random random = Random(); // Générateur aléatoire
   File? _image;
+  late Image image_alea;
   final ImagePicker _picker = ImagePicker();
+
   //directions possibles de mouvements
   List<List<int>> directions = [
     [-1, 0], // Haut
@@ -119,7 +146,16 @@ class Taquinv2State extends State<Taquinv2> {
   @override
   void initState() {
     super.initState();
+    _generateRandomImage();
     _initializeTiles();
+  }
+
+  void _generateRandomImage() {
+    setState(() {
+      image_alea = Image.network(
+        'https://picsum.photos/512?random=${DateTime.now().millisecondsSinceEpoch}',
+      );
+    });
   }
 
   void _initializeTiles() {
@@ -128,14 +164,13 @@ class Taquinv2State extends State<Taquinv2> {
     nbCoups = 0;
     Image image;
     if (widget.typeSelectionne == "Aléatoire") {
-      image = Image.network('https://picsum.photos/512');
+      image = image_alea;
     } else if (widget.typeSelectionne == "Photo" && _image != null) {
       image = Image.file(_image!);
     } else if (widget.typeSelectionne == "Image" && _image != null) {
       image = Image.file(_image!);
     } else {
-      image = Image.network(
-          'https://st4.depositphotos.com/5654532/25554/i/450/depositphotos_255540166-stock-illustration-snake-leather-white-paper-texture.jpg');
+      image = Image.network('');
       print("ERREUR IMAGE NULLE");
     }
     for (int i = 0; i < size.toInt(); i++) {
@@ -146,17 +181,19 @@ class Taquinv2State extends State<Taquinv2> {
             image: image,
             alignment: Alignment(alignX, alignY),
             factor: (1 / size),
-            id: cmp));
+            id: cmp,
+            showNumbers: _showNumbers));
         cmp++;
       }
     }
     emptyTileIndex = tiles.length - 1;
     tiles[emptyTileIndex] = Tile(
-        image: Image.network(
-            'https://st4.depositphotos.com/5654532/25554/i/450/depositphotos_255540166-stock-illustration-snake-leather-white-paper-texture.jpg'),
-        alignment: Alignment(1, 1),
-        factor: (1 / size),
-        id: (size * size).truncate());
+      image: Image.network(''),
+      alignment: Alignment(1, 1),
+      factor: (1 / size),
+      id: (size * size).toInt(),
+      showNumbers: _showNumbers,
+    );
     initTiles = tiles;
     _shuffleTiles(move);
   }
@@ -205,7 +242,6 @@ class Taquinv2State extends State<Taquinv2> {
       moveHistory.add([tappedRow - emptyRow, tappedCol - emptyCol]);
       nbCoups += 1;
       solver();
-      print("Move history : $moveHistory");
     }
   }
 
@@ -271,6 +307,9 @@ class Taquinv2State extends State<Taquinv2> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double tileSize = screenWidth / (size + 1);
     return Scaffold(
       appBar: AppBar(
         title: Text('Taquin'),
@@ -332,6 +371,26 @@ class Taquinv2State extends State<Taquinv2> {
                     ),
                   ],
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Afficher les numéros"),
+                      Switch(
+                        value: _showNumbers,
+                        onChanged: (value) {
+                          setState(() {
+                            _showNumbers = value;
+                            for (int i = 0; i < tiles.length; i++) {
+                              tiles[i].showNumbers = value;
+                            }
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ),
                 if (widget.typeSelectionne == "Photo")
                   ElevatedButton.icon(
                     onPressed: _takePhoto,
@@ -354,8 +413,8 @@ class Taquinv2State extends State<Taquinv2> {
                     itemCount: tiles.length,
                     itemBuilder: (context, index) {
                       return SizedBox(
-                        width: 512 / size,
-                        height: 512 / size,
+                        width: screenWidth / size,
+                        height: screenHeight / size,
                         child: Container(
                           margin: EdgeInsets.all(5.0),
                           child: createTileWidgetFrom(tiles[index], index),
@@ -364,14 +423,15 @@ class Taquinv2State extends State<Taquinv2> {
                     },
                   ),
                 ),
+                SizedBox(height: 15),
                 Text("Nombre de coups avant la fin : $nbMovesRest"),
                 SizedBox(height: 15),
                 Text("Taille du taquin"),
                 Slider(
                   value: size,
-                  min: 3,
+                  min: 2,
                   max: 7,
-                  divisions: 4,
+                  divisions: 5,
                   label: size.round().toString(),
                   onChanged: (value) {
                     setState(() {

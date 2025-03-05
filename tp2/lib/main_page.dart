@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tp2/exo1_page.dart';
 import 'package:tp2/exo2_page.dart';
 import 'package:tp2/exo3_page.dart';
@@ -8,6 +9,8 @@ import 'package:tp2/exo6_page.dart';
 import 'package:tp2/exo6b_page.dart';
 import 'package:tp2/taquin.dart';
 import 'package:tp2/taquinV2_select.dart';
+import 'package:tp2/settings_page.dart';
+import 'package:tp2/theme_provider.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -39,25 +42,43 @@ class MainPageState extends State<MainPage> {
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text("Menu des Exercices"),
+              title: const Text("Menu des Exercices"),
               centerTitle: true,
-              background: Container(color: const Color.fromARGB(255, 202, 167, 235)),
+              background: Container(
+                  color: Provider.of<ThemeProvider>(context).isDarkMode
+                      ? Colors.black54
+                      : const Color.fromARGB(255, 202, 167, 235)),
             ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsPage()),
+                  );
+                },
+              ),
+            ],
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 20.0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                       textStyle: TextStyle(fontSize: 20),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => exercises[index]["page"]),
+                        MaterialPageRoute(
+                            builder: (context) => exercises[index]["page"]),
                       );
                     },
                     child: Text(exercises[index]["title"]),

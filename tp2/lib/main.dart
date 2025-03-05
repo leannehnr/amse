@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
-import 'main_page.dart'; // Page d'accueil
+import 'package:provider/provider.dart';
+import 'theme_provider.dart';
+import 'main_page.dart';
 
-void main() async{
-  runApp(MyApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
-    return MaterialApp(debugShowCheckedModeBanner: false,
-    title: 'Taquin', 
-    theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Color(0x00000000)),),
-    home: MainPage(),
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
+    return MaterialApp(
+      title: 'Mon Application',
+      theme: themeProvider.themeData,
+      home: const MainPage(),
     );
   }
 }
