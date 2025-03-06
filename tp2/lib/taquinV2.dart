@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:image_picker/image_picker.dart';
+import 'dart:typed_data';
 import 'dart:io';
 
 class Tile {
@@ -20,18 +21,29 @@ class Tile {
   Widget croppedImageTile() {
     return Stack(
       children: [
-        FittedBox(
-          fit: BoxFit.fill,
+        SizedBox.expand(
+          // Assure que l’image prend toute la place de la tuile
           child: ClipRect(
             child: Align(
-              alignment: alignment,
-              widthFactor: factor,
-              heightFactor: factor,
-              child: image,
-            ),
+                alignment: alignment,
+                widthFactor: factor,
+                heightFactor: factor,
+                child: FittedBox(
+                  fit: BoxFit.fill,
+                  child: ClipRect(
+                    child: Container(
+                      child: Align(
+                        alignment: alignment,
+                        widthFactor: factor,
+                        heightFactor: factor,
+                        child: image,
+                      ),
+                    ),
+                  ),
+                )),
           ),
         ),
-        if (showNumbers) // Affiche le numéro uniquement si showNumbers est true
+        if (showNumbers)
           Positioned(
             top: 5,
             left: 5,
@@ -140,7 +152,6 @@ class Taquinv2State extends State<Taquinv2> {
       prevRow = emptyRow;
       prevCol = emptyCol;
     }
-    print("Move history : $moveHistory");
   }
 
   @override
@@ -170,7 +181,7 @@ class Taquinv2State extends State<Taquinv2> {
     } else if (widget.typeSelectionne == "Image" && _image != null) {
       image = Image.file(_image!);
     } else {
-      image = Image.network('');
+      image = Image.asset('assets/empty.jpg');
       print("ERREUR IMAGE NULLE");
     }
     for (int i = 0; i < size.toInt(); i++) {
@@ -188,7 +199,7 @@ class Taquinv2State extends State<Taquinv2> {
     }
     emptyTileIndex = tiles.length - 1;
     tiles[emptyTileIndex] = Tile(
-      image: Image.network(''),
+      image: Image.asset('assets/empty.jpg', width: 1, height: 2),
       alignment: Alignment(1, 1),
       factor: (1 / size),
       id: (size * size).toInt(),

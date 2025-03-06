@@ -20,3 +20,6 @@ Si l'application est testée sur téléphone, la partie 'Taquin 2' permet de cho
 
 En haut à gauche de la page d'accueil, on trouve un bouton setting permettant de mettre l'application en mode clair/sombre. 
 
+## Potentiels problèmes à résoudre
+Affichage tablette: je ne comprends pas pourquoi l'image ne prend pas toute la tuile (ça marche pour certaines tablettes - idem pour le format paysage). 
+Améliorer l'UX quand on change de téléphone. 
